@@ -1,4 +1,16 @@
-<script setup lang="ts">
+<template>
+  <input
+    v-for="index in digits"
+    :key="index"
+    maxlength="1"
+    :class="context.classes.digit"
+    :value="tmp[index - 1] || ''"
+    @input="handleInput(index - 1, $event)"
+    @focus="handleFocus"
+  />
+</template>
+
+<script lang="ts" setup>
 import { ref } from "vue";
 
 const props = defineProps({
@@ -11,7 +23,7 @@ const tmp = ref(props.context.value || "");
 /**
  * Handle input, advancing or retreating focus.
  */
-function handleInput(index: number, e: Event) {
+function handleInput(index, e) {
   const prev = tmp.value;
 
   if (tmp.value.length <= index) {
@@ -53,31 +65,9 @@ function handleInput(index: number, e: Event) {
 function handleFocus(e) {
   e.target.select();
 }
-
-/**
- * Handle the paste event.
- */
-function handlePaste(e) {
-  const paste = e.clipboardData.getData("text");
-  if (typeof paste === "string") {
-    // If it is the right length, paste it.
-    tmp.value = paste.substr(0, digits);
-    const inputs = e.target.parentElement.querySelectorAll("input");
-    // Focus on the last character
-    inputs.item(tmp.value.length - 1).focus();
-  }
-}
 </script>
+<script lang="ts">
+import { defineComponent } from "vue";
 
-<template>
-  <input
-    v-for="index in digits"
-    maxlength="1"
-    :key="index"
-    :class="context.classes.digit"
-    :value="tmp[index - 1] || ''"
-    @input="handleInput(index - 1, $event)"
-    @focus="handleFocus"
-    @paste="handlePaste"
-  />
-</template>
+export default defineComponent({});
+</script>

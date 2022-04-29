@@ -12,9 +12,14 @@ const text = {
   message: "text-red-500 mb-1 text-xs",
 };
 
+const otp = {
+  digit: "px-2 border border-gray-400 w-8 mr-2 text-center",
+}
+
 const button = {};
 
 export default {
   text,
   button,
+  otp
 };
