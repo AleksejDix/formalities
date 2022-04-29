@@ -5,7 +5,7 @@
     <div class="wrapper">nothing here</div>
     <HalloLib> world </HalloLib>
 
-    <FormKit type="form" v-model="values">
+    <FormKit type="form">
       <FormKit type="group" v-model="formData">
         <FormKit
           name="hello_world"
