@@ -1,4 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import { plugin, defaultConfig } from "@formkit/vue";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.use(plugin, defaultConfig);
+
+app.mount("#app");
