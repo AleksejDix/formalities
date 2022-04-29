@@ -4,12 +4,17 @@
       <h1 class="text-3xl font-bold underline"></h1>
     </header>
     <main class="container mx-auto pt-8 bg-denim-900">
+      <TextInput label="Some label" placeholder="Some placeholder" />
       <TextInput
         label="Some label"
         placeholder="Some placeholder"
         validation="required"
-        prefix="asfd"
-        suffix="asfd"
+      />
+      <TextInput
+        label="Some label"
+        placeholder="Some placeholder"
+        validation="required"
+        :disabled="true"
       />
       <AllInputs />
     </main>

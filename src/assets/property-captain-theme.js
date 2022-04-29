@@ -3,16 +3,16 @@ const global = {
   label: "text-14 mb-1 text-denim-400 font-medium formkit-invalid:text-ruby-700",
   message: "text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700",
   inner: "text-16",
-  input: "placeholder-denim-700 placeholder-font-regular formkit-invalid:placeholder-ruby-700"
+  input: "placeholder-denim-700 formkit-invalid:placeholder-ruby-700"
 };
 
 const text = {
   outer: "mb-5",
   label: "block font-bold text-sm",
   inner:
-    "max-w-md border border-gray-400 rounded-lg mb-1 overflow-hidden focus-within:border-blue-500",
+    "rounded-lg p-0.5 border-2 border-transparent focus-within:border-velvet-600",
   input:
-    "w-full py-3 pl-3 border-none  bg-offwhite-100",
+    "py-3 pl-3 block w-full rounded-lg border bg-offwhite-100 text-denim-800 focus:border focus:border-velvet-600 focus:ring-0 focus:outline-none formkit-disabled:bg-denim-400",
   messages: "list-none p-0 mt-1 mb-0",
 };
 

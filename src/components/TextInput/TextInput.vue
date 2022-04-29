@@ -4,7 +4,7 @@
     type="text"
     :placeholder="placeholder"
     :validation="validation"
-    validation-label="Input"
+    :diabled="disabled"
   />
 </template>
 
@@ -23,6 +23,10 @@ export default defineComponent({
     validation: {
       type: String,
       default: "",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup() {},
