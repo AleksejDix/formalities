@@ -6,7 +6,7 @@ const global = {
   input: "placeholder-denim-700 bg-offwhite-100 border dark:border-denim-400 border-denim-900 formkit-invalid:placeholder-ruby-700"
 };
 
-const text = {
+const formInput = {
   inner:
     "rounded-lg p-0.5 border-2 border-transparent focus-within:border-velvet-600",
   input:
@@ -21,7 +21,19 @@ const button = {};
 
 export default {
   global,
-  text,
+  text: formInput,
+  number: formInput,
+  email: formInput,
+  url: formInput,
+  password: formInput,
+  date: formInput,
+  datetimeLocal: formInput,
+  month: formInput,
+  search: formInput,
+  tel: formInput,
+  time: formInput,
+  week: formInput,
+  hidden: formInput,
   button,
   otp,
 };

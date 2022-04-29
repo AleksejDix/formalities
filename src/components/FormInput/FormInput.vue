@@ -1,10 +1,11 @@
 <template>
   <FormKit
     :label="label"
-    type="text"
+    :type="type"
     :placeholder="placeholder"
     :validation="validation"
     :disabled="disabled"
+    @input="handleUpdate"
   >
     <template #prefix v-if="$slots.prefix">
       <slot name="prefix"></slot>
@@ -17,8 +18,21 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 export default defineComponent({
+  model: {
+    prop: "value",
+    event: "update",
+  },
   props: {
+    type: {
+      type: String,
+      default: "text",
+    },
+    value: {
+      type: [String, Number],
+      default: "",
+    },
     label: {
       type: String,
       default: "",
@@ -36,6 +50,16 @@ export default defineComponent({
       default: false,
     },
   },
-  setup() {},
+  setup(props, { emit }) {
+    const handleUpdate = (value: string): void => {
+      let response: string | number = value;
+      if (props.type === "number") {
+        response =
+          value === null || value === "" ? null : (Number(value) as number);
+      }
+      emit("update", response);
+    };
+    return { handleUpdate };
+  },
 });
 </script>
