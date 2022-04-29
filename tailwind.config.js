@@ -1,8 +1,8 @@
 const FormKitPlugin = require("@formkit/tailwindcss").default;
+const TailwindForms = require("@tailwindcss/forms");
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
-  darkMode: "class",
   theme: {
     container: {
       center: true,
@@ -166,5 +166,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [FormKitPlugin],
+  plugins: [TailwindForms, FormKitPlugin],
 };

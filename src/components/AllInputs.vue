@@ -1,7 +1,4 @@
 <template>
-  <header>
-    <h1>All inputs</h1>
-  </header>
   <section>
     <FormKit
       v-for="type in inputTypes"
@@ -17,6 +14,7 @@
       :validation-visibility="type === 'email' ? 'live' : 'blur'"
       :validation-label="type"
     />
+
     <FormKit type="form">
       <FormKit
         type="otp"

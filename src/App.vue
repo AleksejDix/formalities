@@ -3,7 +3,7 @@
     <header>
       <h1 class="text-3xl font-bold underline"></h1>
     </header>
-    <main class="container mx-auto pt-8">
+    <main class="container mx-auto pt-8 max-w-sm">
       <FormInput
         v-model="input1"
         type="number"
