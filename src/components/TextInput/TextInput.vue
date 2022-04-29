@@ -4,8 +4,15 @@
     type="text"
     :placeholder="placeholder"
     :validation="validation"
-    :diabled="disabled"
-  />
+    :disabled="disabled"
+  >
+    <template #prefix v-if="$slots.prefix">
+      <slot name="prefix"></slot>
+    </template>
+    <template #suffix v-if="$slots.suffix">
+      <slot name="suffix"></slot>
+    </template>
+  </FormKit>
 </template>
 
 <script lang="ts">
