@@ -1,4 +1,4 @@
-const FormKitPlugin = require("@formkit/tailwindcss");
+const FormKitPlugin = require("@formkit/tailwindcss").default;
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],

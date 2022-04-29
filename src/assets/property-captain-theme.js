@@ -1,18 +1,19 @@
 const global = {
   outer: "mb-5 border rounded",
-  label: "block mb-1 font-bold text-sm formkit-invalid:text-ruby-700",
+  label: "text-14 mb-1 text-denim-400 font-medium formkit-invalid:text-ruby-700",
+  message: "text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700",
+  inner: "text-16",
+  input: "placeholder-denim-700 placeholder-font-regular formkit-invalid:placeholder-ruby-700"
 };
 
 const text = {
   outer: "mb-5",
-  label: "block mb-1 font-bold text-sm",
+  label: "block font-bold text-sm",
   inner:
     "max-w-md border border-gray-400 rounded-lg mb-1 overflow-hidden focus-within:border-blue-500",
   input:
-    "w-full h-10 px-3 border-none text-base text-gray-700 placeholder-gray-400 bg-ruby-700",
-  help: "text-xs text-gray-500",
+    "w-full py-3 pl-3 border-none  bg-offwhite-100",
   messages: "list-none p-0 mt-1 mb-0",
-  message: "text-red-500 mb-1 text-xs",
 };
 
 const otp = {
