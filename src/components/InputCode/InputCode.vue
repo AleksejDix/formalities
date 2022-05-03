@@ -11,10 +11,16 @@
 </template>
 
 <script lang="ts" setup>
+import type { PropType } from "vue";
+import type { FormKitFrameworkContext } from "@formkit/core";
+
 import { ref } from "vue";
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & { digicts: number }>,
+    required: true,
+  },
 });
 
 const digits = Number(props.context.digits);
@@ -23,19 +29,21 @@ const tmp = ref(props.context.value || "");
 /**
  * Handle input, advancing or retreating focus.
  */
-function handleInput(index, e) {
+function handleInput(index: number, e: Event) {
   const prev = tmp.value;
+
+  const targetEl = e.target as HTMLInputElement;
 
   if (tmp.value.length <= index) {
     // If this is a new digit
-    tmp.value = "" + tmp.value + e.target.value;
+    tmp.value = "" + tmp.value + targetEl.value;
   } else {
     // If this digit is in the middle somewhere, cut the string into two
     // pieces at the index, and insert our new digit in.
     tmp.value =
       "" +
       tmp.value.substr(0, index) +
-      e.target.value +
+      targetEl.value +
       tmp.value.substr(index + 1);
   }
 
@@ -62,12 +70,7 @@ function handleInput(index, e) {
 /**
  * On focus, select the text in our input.
  */
-function handleFocus(e) {
-  e.target.select();
+function handleFocus(event: Event) {
+  (event.target as HTMLInputElement).select();
 }
-</script>
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({});
 </script>

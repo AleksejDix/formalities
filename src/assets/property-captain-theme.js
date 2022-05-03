@@ -17,7 +17,7 @@ const formInput = {
     "border border-transparent py-[11px] pl-3 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed",
 };
 
-const otp = {
+const code = {
   inner: "flex space-x-4",
   digit:
     "inline-block border border-transparent py-[11px] pl-3 block w-full rounded-lg text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed focus:ring focus:ring-velvet-600 focus:ring-offset-2 focus:ring-offset-denim-900 focus:border-velvet-600 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-invalid:focus:border-ruby-700",
@@ -45,6 +45,11 @@ const textarea = {
     "border border-transparent py-[11px] pl-3 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed",
 };
 
+const passwordToggle = {
+  inner: "flex space-x-4",
+  button: button.input,
+};
+
 export default {
   global,
   radio,
@@ -66,5 +71,6 @@ export default {
   select: formInput,
   button,
   submit: button,
-  otp,
+  code,
+  passwordToggle: { ...formInput, ...passwordToggle },
 };
