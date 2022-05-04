@@ -1,6 +1,5 @@
 <template>
   <input
-    v-bind="$attrs"
     :type="node.props.inputType"
     @input="context.handlers.DOMInput"
     @blur="handleBlur"
@@ -9,6 +8,7 @@
     :name="node.name"
     :class="context.classes.input"
     :disabled="(context.disabled as boolean)"
+    v-bind="context.attrs"
   />
   <button type="button" @click="toggleType" :class="context.classes.button">
     {{ node.props.icon }}

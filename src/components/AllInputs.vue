@@ -48,6 +48,7 @@ const inputTypes = ref([
   "week",
   "code",
   "passwordToggle",
+  "counter",
 ]);
 const inputOptions = ref({
   checkbox: [

@@ -50,6 +50,12 @@ const passwordToggle = {
   button: button.input,
 };
 
+const counter = {
+  inner: "flex space-x-4",
+  up: button.input,
+  down: button.input,
+};
+
 export default {
   global,
   radio,
@@ -73,4 +79,5 @@ export default {
   submit: button,
   code,
   passwordToggle: { ...formInput, ...passwordToggle },
+  counter: { ...formInput, ...counter },
 };
