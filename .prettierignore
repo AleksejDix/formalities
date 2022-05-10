@@ -1,0 +1,6 @@
+/node_modules/**
+/dist/**
+/stats.html
+/coverage
+/coverage-unit
+/coverage-e2e

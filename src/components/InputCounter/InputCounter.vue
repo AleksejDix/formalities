@@ -7,9 +7,7 @@
       </div>
     </div>
     <div>
-      <button type="button" @click="down" :class="context.classes.down">
-        down
-      </button>
+      <button type="button" @click="down" :class="context.classes.down">down</button>
       <input
         type="hidden"
         @input="context.handlers.DOMInput"
@@ -31,23 +29,23 @@
 </template>
 
 <script lang="ts" setup>
-import { toRef } from "vue";
-import type { PropType } from "vue";
-import type { FormKitFrameworkContext } from "@formkit/core";
+import { toRef } from 'vue';
+import type { PropType } from 'vue';
+import type { FormKitFrameworkContext } from '@formkit/core';
 
 const props = defineProps({
   context: {
     type: Object as PropType<FormKitFrameworkContext>,
-    required: true,
-  },
+    required: true
+  }
 });
 
-const context = toRef(props, "context");
+const context = toRef(props, 'context');
 const node = context.value.node;
 console.log(context);
 
-node.props.inputType = "password";
-node.props.icon = "view";
+node.props.inputType = 'password';
+node.props.icon = 'view';
 
 const handleBlur = () => {
   context.value.handlers.blur();

@@ -11,20 +11,20 @@
 </template>
 
 <script lang="ts" setup>
-import type { PropType } from "vue";
-import type { FormKitFrameworkContext } from "@formkit/core";
+import type { PropType } from 'vue';
+import type { FormKitFrameworkContext } from '@formkit/core';
 
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const props = defineProps({
   context: {
     type: Object as PropType<FormKitFrameworkContext & { digicts: number }>,
-    required: true,
-  },
+    required: true
+  }
 });
 
 const digits = Number(props.context.digits);
-const tmp = ref(props.context.value || "");
+const tmp = ref(props.context.value || '');
 
 /**
  * Handle input, advancing or retreating focus.
@@ -36,19 +36,15 @@ function handleInput(index: number, e: Event) {
 
   if (tmp.value.length <= index) {
     // If this is a new digit
-    tmp.value = "" + tmp.value + targetEl.value;
+    tmp.value = '' + tmp.value + targetEl.value;
   } else {
     // If this digit is in the middle somewhere, cut the string into two
     // pieces at the index, and insert our new digit in.
-    tmp.value =
-      "" +
-      tmp.value.substr(0, index) +
-      targetEl.value +
-      tmp.value.substr(index + 1);
+    tmp.value = '' + tmp.value.substr(0, index) + targetEl.value + tmp.value.substr(index + 1);
   }
 
   // Get all the digit inputs
-  const inputs = e.target.parentElement.querySelectorAll("input");
+  const inputs = e.target.parentElement.querySelectorAll('input');
 
   if (index < digits - 1 && tmp.value.length >= prev.length) {
     // If this is a new input and not at the end, focus the next input
@@ -61,9 +57,9 @@ function handleInput(index: number, e: Event) {
   if (tmp.value.length === digits) {
     // If our input is complete, commit the value.
     props.context.node.input(tmp.value);
-  } else if (tmp.value.length < digits && props.context.value !== "") {
+  } else if (tmp.value.length < digits && props.context.value !== '') {
     // If our input is incomplete, it should have no value.
-    props.context.node.input("");
+    props.context.node.input('');
   }
 }
 

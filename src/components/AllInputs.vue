@@ -21,42 +21,38 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const data = ref();
 const inputTypes = ref([
-  "button",
-  "checkbox",
-  "color",
-  "date",
-  "datetime-local",
-  "email",
-  "file",
-  "month",
-  "number",
-  "password",
-  "radio",
-  "range",
-  "search",
-  "select",
-  "submit",
-  "tel",
-  "text",
-  "textarea",
-  "time",
-  "url",
-  "week",
-  "code",
-  "passwordToggle",
-  "counter",
+  'button',
+  'checkbox',
+  'color',
+  'date',
+  'datetime-local',
+  'email',
+  'file',
+  'month',
+  'number',
+  'password',
+  'radio',
+  'range',
+  'search',
+  'select',
+  'submit',
+  'tel',
+  'text',
+  'textarea',
+  'time',
+  'url',
+  'week',
+  'code',
+  'passwordToggle',
+  'counter'
 ]);
 const inputOptions = ref({
-  checkbox: [
-    "I like Tailwind",
-    "I also like FormKit",
-    "I like other things too",
-  ],
-  radio: ["I like Tailwind", "I like FormKit", "I like everything"],
-  select: ["I like Tailwind", "I like FormKit", "I like everything"],
+  checkbox: ['I like Tailwind', 'I also like FormKit', 'I like other things too'],
+  radio: ['I like Tailwind', 'I like FormKit', 'I like everything'],
+  select: ['I like Tailwind', 'I like FormKit', 'I like everything']
 });
 </script>
