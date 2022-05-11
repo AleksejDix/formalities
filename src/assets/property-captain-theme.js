@@ -8,7 +8,8 @@ const global = {
   inner: '',
   input:
     'text-16 focus:placeholder-denim-900 placeholder-denim-700 dark:border-denim-400 border-denim-400 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700',
-  help: 'text-14 text-denim-400 pt-1'
+  help: 'text-14 text-denim-400 pt-1',
+  legend: 'text-16 text-denim-400 font-medium'
 };
 
 const formInput = {
@@ -28,15 +29,15 @@ const button = {
 };
 
 const radio = {
-  legend: 'bg-ruby-700',
   wrapper: 'flex items-center space-x-4',
   label: 'block w-full flex-1 text-offwhite text-16 pt-2'
 };
 
 const checkbox = {
-  legend: 'bg-ruby-700',
   wrapper: 'flex items-center space-x-4',
-  label: 'block w-full flex-1 text-offwhite text-16 pt-2'
+  label: 'block w-full flex-1 text-offwhite text-16 pt-2',
+  input:
+    'form-checkbox cursor-pointer rounded h-6 w-6 dark:bg-denim-800 border border-denim-900 dark:border-offwhite-100 focus:dark:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:bg-denim-800 focus:bg-velvet-600 focus:ring-velvet-800 checked:bg-velvet-600 checked:border-offwhite-100 checked:focus:border-offwhite-100 checked:hover:border-offwhite-100 checked:hover:bg-velvet-600 checked:focus:bg-velvet-600 formkit-disabled:bg-denim-400 formkit-disabled:border-denim-500'
 };
 
 const passwordToggle = {
