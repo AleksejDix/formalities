@@ -7,7 +7,6 @@
       :type="type"
       :placeholder="`${type} input placeholder`"
       :options="inputOptions[type] ? inputOptions[type] : null"
-      :help="`Help text for the ${type} input`"
       :digits="type === 'code' ? '4' : undefined"
       :multiple="type === 'file'"
       :disabled="type === 'date' ? true : undefined"
@@ -25,29 +24,30 @@ import { ref } from 'vue';
 
 const data = ref();
 const inputTypes = ref([
+  'text',
+  'textarea',
+  'email',
+  'url',
+  'password',
+  'number',
+  'date',
+  'datetime-local',
+  'month',
+  'search',
+  'tel',
+  'time',
+  'week',
+  'hidden',
   'button',
   'checkbox',
   'color',
-  'date',
-  'datetime-local',
-  'email',
   'file',
-  'month',
-  'number',
-  'password',
   'radio',
   'range',
-  'search',
   'select',
   'submit',
-  'tel',
-  'text',
-  'textarea',
-  'time',
-  'url',
-  'week',
-  'code',
   'passwordToggle',
+  'code',
   'counter'
 ]);
 const inputOptions = ref({

@@ -24,7 +24,7 @@ const code = {
 
 const button = {
   input:
-    'inline-block font-medium text-offwhite-100 rounded-lg text-16 py-[11px] px-3 bg-velvet-600 border-ruby-600 formkit-disabled:bg-denim-400 formkit-disabled:text-700'
+    'border dark:border-transparent inline-block font-medium text-offwhite-100 rounded-lg text-16 py-[11px] px-3 bg-velvet-600 border-ruby-600 formkit-disabled:bg-denim-400 formkit-disabled:text-700'
 };
 
 const radio = {

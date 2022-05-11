@@ -7,6 +7,7 @@
     :disabled="disabled"
     @input="handleUpdate"
   >
+    <!-- TODO: extend styles for prefix/suffix -->
     <template #prefix v-if="$slots.prefix">
       <slot name="prefix"></slot>
     </template>
@@ -20,7 +21,14 @@
 const props = defineProps({
   type: {
     type: String,
-    default: 'text'
+    default: 'text',
+    validator(value: string) {
+      const isValid = includes(TYPES)(value);
+      if (!isValid) {
+        console.warn(`allowed types are ${TYPES}`);
+      }
+      return isValid;
+    }
   },
   value: {
     type: [String, Number],
@@ -52,4 +60,26 @@ const handleUpdate = (value: string): void => {
   }
   emit('update', response);
 };
+</script>
+
+<script lang="ts">
+const TYPES = [
+  'text',
+  'email',
+  'url',
+  'password',
+  'number',
+  'date',
+  'datetime-local',
+  'month',
+  'search',
+  'tel',
+  'time',
+  'week',
+  'hidden'
+];
+const includes =
+  (types: Array<string>) =>
+  (type: string): boolean =>
+    types.includes(type);
 </script>
