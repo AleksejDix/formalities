@@ -1,5 +1,24 @@
 <template>
   <FormKit type="group" v-model="data">
+    <GlobalButton label="primary" variant="primary" />
+    <GlobalButton label="secondary" variant="secondary" />
+    <GlobalButton label="critical" variant="critical" />
+    <GlobalButton disabled label="large" size="large" />
+    <GlobalButton label="submit" type="submit" />
+
+    <InputRange label="Select input" placeholder="Select input" />
+    <FormSelect
+      label="Select input"
+      placeholder="Select input"
+      :options="[
+        { label: 'France', value: 'fr' },
+        { label: 'Germany', value: 'de' },
+        { label: 'Spain', value: 'es' },
+        { label: 'Italy', value: 'ie' },
+        { label: 'Greece', value: 'gr' }
+      ]"
+      v-model="select"
+    />
     <FormKit
       v-for="type in inputTypes"
       :key="type"
@@ -21,7 +40,11 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import GlobalButton from './GlobalButton/GlobalButton.vue';
+import FormSelect from './FormSelect/FormSelect.vue';
+import InputRange from './InputRange/InputRange.vue';
 
+const select = ref(null);
 const data = ref();
 const inputTypes = ref([
   'text',

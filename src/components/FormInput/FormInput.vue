@@ -1,5 +1,6 @@
 <template>
   <FormKit
+    v-bind="$attrs"
     :label="label"
     :type="type"
     :placeholder="placeholder"
@@ -17,6 +18,11 @@
   </FormKit>
 </template>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false
+};
+</script>
 <script lang="ts" setup>
 const props = defineProps({
   type: {

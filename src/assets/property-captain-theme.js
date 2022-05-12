@@ -17,27 +17,33 @@ const formInput = {
     'border border-transparent hover:border-velvet-600 focus:border-velvet-600 focus:ring focus:ring-offset-2 focus:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-3 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed'
 };
 
-const code = {
-  inner: 'flex space-x-4',
-  digit:
-    'inline-block border border-transparent py-[11px] pl-3 block w-full rounded-lg text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed focus:ring focus:ring-velvet-600 focus:ring-offset-2 focus:ring-offset-denim-900 focus:border-velvet-600 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-invalid:focus:border-ruby-700'
-};
-
 const button = {
   input:
     'global-button border inline-block transform text-center font-medium transition ease-in text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400'
-};
-
-const radio = {
-  wrapper: 'flex items-center space-x-4',
-  label: 'block w-full flex-1 text-offwhite text-16 pt-2'
 };
 
 const checkbox = {
   wrapper: 'flex items-center space-x-4',
   label: 'block w-full flex-1 text-offwhite text-16 pt-2',
   input:
-    'form-checkbox cursor-pointer rounded h-6 w-6 dark:bg-denim-800 border border-denim-900 dark:border-offwhite-100 focus:dark:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:bg-denim-800 focus:bg-velvet-600 focus:ring-velvet-800 checked:bg-velvet-600 checked:border-offwhite-100 checked:focus:border-offwhite-100 checked:hover:border-offwhite-100 checked:hover:bg-velvet-600 checked:focus:bg-velvet-600 formkit-disabled:bg-denim-400 formkit-disabled:border-denim-500'
+    'form-checkbox rounded cursor-pointer h-6 w-6 dark:bg-denim-800 border border-denim-900 dark:border-offwhite-100 focus:dark:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:bg-denim-800 focus:bg-velvet-600 focus:ring-velvet-800 checked:bg-velvet-600 checked:border-offwhite-100 checked:focus:border-offwhite-100 checked:hover:border-offwhite-100 checked:hover:bg-velvet-600 checked:focus:bg-velvet-600 formkit-disabled:bg-denim-400 formkit-disabled:border-denim-500'
+};
+
+const radio = {
+  wrapper: 'flex items-center space-x-4',
+  label: 'block w-full flex-1 text-offwhite text-16 pt-2',
+  input:
+    'form-radio rounded-full cursor-pointer h-6 w-6 dark:bg-denim-800 border border-denim-900 dark:border-offwhite-100 focus:dark:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:bg-denim-800 focus:bg-velvet-600 focus:ring-velvet-800 checked:bg-velvet-600 checked:border-offwhite-100 checked:focus:border-offwhite-100 checked:hover:border-offwhite-100 checked:hover:bg-velvet-600 checked:focus:bg-velvet-600 formkit-disabled:bg-denim-400 formkit-disabled:border-denim-500'
+};
+
+const range = {
+  input: 'form-range range-slider'
+};
+
+const code = {
+  inner: 'flex space-x-4',
+  digit:
+    'inline-block border border-transparent py-[11px] pl-3 block w-full rounded-lg text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed focus:ring focus:ring-velvet-600 focus:ring-offset-2 focus:ring-offset-denim-900 focus:border-velvet-600 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-invalid:focus:border-ruby-700'
 };
 
 const passwordToggle = {
@@ -70,6 +76,7 @@ export default {
   week: formInput,
   hidden: formInput,
   select: formInput,
+  range: range,
   button,
   submit: button,
   code,

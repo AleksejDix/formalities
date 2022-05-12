@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.range-slider {
+  @apply appearance-none w-full h-2 rounded-full bg-denim-400;
+}
+.range-slider::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full bg-velvet-800 cursor-pointer ring-4 ring-offwhite-100;
+}
