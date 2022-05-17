@@ -19,7 +19,7 @@ const formInput = {
 
 const button = {
   input:
-    'global-button border inline-block transform text-center font-medium transition ease-in text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400'
+    'global-button border flex transform text-center font-medium transition ease-in text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400 items-center space-x-2'
 };
 
 const checkbox = {
@@ -52,9 +52,12 @@ const passwordToggle = {
 };
 
 const counter = {
-  inner: 'flex space-x-4',
-  up: button.input,
-  down: button.input
+  wrapper: 'flex items-center justify-between',
+  label: 'hidden',
+  customLabel:
+    'inline-block pb-1 pr-6 text-16 text-denim-400 font-medium formkit-invalid:text-ruby-700',
+  customHelp: 'text-14 dark:text-denim-600 pt-1',
+  input: 'dark:text-offwhite-100 w-14'
 };
 
 export default {
@@ -81,5 +84,5 @@ export default {
   submit: button,
   code,
   passwordToggle: { ...formInput, ...passwordToggle },
-  counter: { ...formInput, ...counter }
+  counter: counter
 };

@@ -2,10 +2,13 @@
   <FormKit
     type="button"
     :input-class="[type, variant, size].join(' ')"
-    :label="label"
     :disabled="disabled"
     @on="$attrs"
   >
+    <slot v-if="$slots.prefix" name="prefix"></slot>
+    <span v-if="label">
+      {{ label }}
+    </span>
   </FormKit>
 </template>
 
@@ -14,7 +17,7 @@ import { PropType } from 'vue';
 
 const props = defineProps({
   type: {
-    type: String as PropType<'button' | 'submit'>,
+    type: String as PropType<'button' | 'submit' | 'icon'>,
     default: 'button'
   },
   variant: {
@@ -78,5 +81,9 @@ const props = defineProps({
 
 .global-button.large {
   @apply py-[11px] px-[23px] text-20;
+}
+
+.global-button.icon {
+  @apply px-[15px];
 }
 </style>
