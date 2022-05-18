@@ -12,6 +12,31 @@
       ]"
       v-model="select"
     />
+    <GlobalOptions
+      label="Radio input"
+      placeholder="Radio input"
+      type="radio"
+      :options="[
+        { label: 'France', value: 'fr' },
+        { label: 'Germany', value: 'de' },
+        { label: 'Spain', value: 'es' },
+        { label: 'Italy', value: 'ie' }
+      ]"
+      v-model="radio"
+    />
+    <GlobalOptions
+      label="Checkbox input"
+      placeholder="Checkbox input"
+      type="checkbox"
+      validation="required"
+      :options="[
+        { label: 'France', value: 'fr' },
+        { label: 'Germany', value: 'de' },
+        { label: 'Spain', value: 'es' },
+        { label: 'Italy', value: 'ie' }
+      ]"
+      v-model="checkbox"
+    />
     <FormKit
       v-for="type in inputTypes"
       :key="type"
@@ -80,8 +105,8 @@ import GlobalButton from './GlobalButton/GlobalButton.vue';
 import FormSelect from './FormSelect/FormSelect.vue';
 import InputRange from './InputRange/InputRange.vue';
 import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
+import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
 
-const select = ref(null);
 const data = ref();
 const inputTypes = ref([
   'text',
@@ -99,8 +124,6 @@ const inputTypes = ref([
   'week',
   'hidden',
   'button',
-  'checkbox',
-  'radio',
   'range',
   'select'
 ]);
@@ -109,6 +132,8 @@ const inputOptions = ref({
   radio: ['I like Tailwind', 'I like FormKit', 'I like everything'],
   select: ['I like Tailwind', 'I like FormKit', 'I like everything']
 });
-
+const select = ref(null);
 const counterValue = ref(0);
+const radio = ref();
+const checkbox = ref();
 </script>
