@@ -2,19 +2,19 @@ const global = {
   wrapper: '',
   outer: 'pt-2 pb-2',
   prefix: 'border bg-ruby-700 w-10 b-10',
-  label: 'inline-block pb-1 text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700',
+  label:
+    'inline-block pb-1 text-14 text-denim-900 dark:text-denim-400 font-medium dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700',
   messages: 'pt-1',
   message: 'text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700',
-  inner: '',
   input:
-    'text-16 focus:placeholder-denim-900 placeholder-denim-700 dark:border-denim-400 border-denim-400 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700',
+    'text-16 placeholder-denim-700 border-denim-600 dark:border-denim-400 border-denim-400 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700',
   help: 'text-14 text-denim-400 pt-1',
   legend: 'text-16 text-denim-400 font-medium'
 };
 
 const formInput = {
   input:
-    'border border-transparent hover:border-velvet-600 focus:border-velvet-600 focus:ring focus:ring-offset-2 focus:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-3 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed'
+    'border border-transparent hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-3 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed'
 };
 
 const button = {
@@ -55,7 +55,7 @@ const counter = {
   wrapper: 'flex items-center justify-between',
   label: 'hidden',
   customLabel:
-    'inline-block pb-1 pr-6 text-16 text-denim-400 font-medium formkit-invalid:text-ruby-700',
+    'inline-block pb-1 pr-6 text-16 text-denim-900 dark:text-denim-400 font-medium formkit-invalid:text-ruby-700',
   customHelp: 'text-14 dark:text-denim-600 pt-1',
   input: 'dark:text-offwhite-100 w-14'
 };

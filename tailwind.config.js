@@ -1,153 +1,181 @@
-const FormKitPlugin = require("@formkit/tailwindcss").default;
-const TailwindForms = require("@tailwindcss/forms");
+const FormKitPlugin = require('@formkit/tailwindcss').default;
+const TailwindForms = require('@tailwindcss/forms');
 
 module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
-        lg: "2rem",
-      },
+        DEFAULT: '1rem',
+        lg: '2rem'
+      }
     },
     colors: {
-      current: "currentColor",
-      white: "#ffffff",
-      black: "#000000",
+      current: 'currentColor',
+      white: '#ffffff',
+      black: '#000000',
       offwhite: {
-        100: "#F9F9FF",
+        100: '#F9F9FF'
       },
       denim: {
-        900: "#161627",
-        800: "#2A3151",
-        700: "#474780",
-        600: "#8C8CC0",
-        500: "#A8A8CF",
-        400: "#C4C4DE",
+        900: '#161627',
+        800: '#2A3151',
+        700: '#474780',
+        600: '#8C8CC0',
+        500: '#A8A8CF',
+        400: '#C4C4DE'
       },
       velvet: {
-        900: "#2F1E6B",
-        800: "#472EA3",
-        600: "#6B50CE",
+        900: '#2F1E6B',
+        800: '#472EA3',
+        600: '#6B50CE'
       },
       ruby: {
-        900: "#6B0017",
-        700: "#DB0030",
+        900: '#6B0017',
+        700: '#DB0030'
       },
       frog: {
-        900: "#106043",
-        800: "#1EB37C",
+        900: '#106043',
+        800: '#1EB37C'
       },
       sun: {
-        900: "#62460E",
-        800: "#DCA638",
+        900: '#62460E',
+        800: '#DCA638'
       },
       background: {
-        900: "#35003E",
-        800: "#54005B",
+        900: '#35003E',
+        800: '#54005B'
       },
       object: {
-        start: "#2F1F6C",
-        end: "#6D52CE",
-        fill: "#3A3B79",
+        start: '#2F1F6C',
+        end: '#6D52CE',
+        fill: '#3A3B79'
       },
       surroundings: {
-        start: "#A8A8CF",
-        end: "#ECECF4",
-        fill: "#5D627C",
+        start: '#A8A8CF',
+        end: '#ECECF4',
+        fill: '#5D627C'
       },
       financing: {
-        start: "#B51297",
-        end: "#EF5DD4",
-        fill: "#5F3774",
+        start: '#B51297',
+        end: '#EF5DD4',
+        fill: '#5F3774'
       },
       badge: {
-        start: "#DB62CB",
-        end: "#6C50C3",
-        fill: "#9F2A99",
+        start: '#DB62CB',
+        end: '#6C50C3',
+        fill: '#9F2A99'
       },
       landingPage: {
-        start: "#AC89ED30",
-        end: "#FB3F3640",
+        start: '#AC89ED30',
+        end: '#FB3F3640'
       },
-      hover: "#38416B",
-      transparent: "transparent",
+      hover: '#38416B',
+      transparent: 'transparent'
     },
     lineHeight: {},
     fontSize: {
-      12: ["12px", "14px"],
-      14: ["14px", "16px"],
-      16: ["16px", "24px"],
-      18: ["18px", "24px"],
-      20: ["20px", "32px"],
-      24: ["24px", "32px"],
-      32: ["32px", "36px"],
-      36: ["36px", "48px"],
-      48: ["48px", "64px"],
-      60: ["60px", "72px"],
+      12: ['12px', '14px'],
+      14: ['14px', '16px'],
+      16: ['16px', '24px'],
+      18: ['18px', '24px'],
+      20: ['20px', '32px'],
+      24: ['24px', '32px'],
+      32: ['32px', '36px'],
+      36: ['36px', '48px'],
+      48: ['48px', '64px'],
+      60: ['60px', '72px']
     },
     fontWeight: {
       normal: 400,
       medium: 500,
       semibold: 600,
-      bold: 700,
+      bold: 700
     },
     shadows: {
-      default: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
-      none: "none",
+      default: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+      none: 'none'
+    },
+    aspectRatio: {
+      1: '1',
+      2: '2',
+      3: '3',
+      4: '4',
+      5: '5',
+      6: '6',
+      7: '7',
+      8: '8',
+      9: '9',
+      10: '10',
+      11: '11',
+      12: '12',
+      13: '13',
+      14: '14',
+      15: '15',
+      16: '16'
     },
     // https://en.wikipedia.org/wiki/Display_resolution#/media/File:Vector_Video_Standards8.svg
     extend: {
+      screens: {
+        '3xl': '1792px'
+      },
       minHeight: {
-        4: "1rem",
-        6: "1.5rem",
-        10: "2.5rem",
-        70: "70vh",
+        4: '1rem',
+        6: '1.5rem',
+        10: '2.5rem',
+        70: '70vh'
       },
       minWidth: {
-        40: "10rem",
-        60: "15rem",
-        xxs: "320px",
-        xs: "480px",
-        sm: "640px",
-        md: "800px",
+        40: '10rem',
+        60: '15rem',
+        xxs: '320px',
+        xs: '480px',
+        sm: '640px',
+        md: '800px'
       },
       animation: {
-        clockwise: "clockwise 2s linear infinite",
-        anticlockwise: "anticlockwise 2s linear infinite",
-        bokeh: "bokeh 60s linear infinite alternate both",
+        clockwise: 'clockwise 2s linear infinite',
+        anticlockwise: 'anticlockwise 2s linear infinite',
+        bokeh: 'bokeh 60s linear infinite alternate both',
+        wiggle: 'wiggle 0.7s ease-in-out'
       },
       keyframes: {
         clockwise: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' }
         },
         anticlockwise: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(-360deg)" },
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' }
         },
         bokeh: {
-          "50%": { transform: "translate3d(0, 0, 0) rotate(2deg)" },
+          '50%': { transform: 'translate3d(0, 0, 0) rotate(2deg)' }
         },
+        wiggle: {
+          '0%': { transform: 'translate3d(100%,0,0) rotate(-50deg)' },
+          '50%': { transform: 'translate3d(-50%,0,0) rotate(50deg)' },
+          '100%': { transform: 'translate3d(0%,0,0) rotate(0deg)' }
+        }
       },
       maxHeight: {
-        "half-screen": "50vh",
+        'half-screen': '50vh'
       },
       zIndex: {
-        1: "1",
-        2: "2",
-        5: "5",
-        "-1": -1,
+        1: '1',
+        2: '2',
+        5: '5',
+        '-1': -1
       },
       width: {
-        50: "50rem",
+        50: '50rem'
       },
       borderRadius: {
-        sm: "0.15rem",
+        sm: '0.15rem'
       },
       inset: {
-        18: "4.3rem",
+        18: '4.3rem'
       },
 
       // tailwind darkmode for prose plugin
@@ -156,15 +184,15 @@ module.exports = {
         default: {
           css: {
             a: {
-              color: theme("colors.ruby.700"),
-              "&:hover": {
-                color: theme("colors.ruby.700"),
-              },
-            },
-          },
-        },
-      }),
-    },
+              color: theme('colors.ruby.700'),
+              '&:hover': {
+                color: theme('colors.ruby.700')
+              }
+            }
+          }
+        }
+      })
+    }
   },
-  plugins: [TailwindForms, FormKitPlugin],
+  plugins: [TailwindForms, FormKitPlugin]
 };
