@@ -16,34 +16,33 @@
 </template>
 
 <script lang="ts" setup>
-import { toRef } from "vue";
-import type { PropType } from "vue";
-import type { FormKitFrameworkContext } from "@formkit/core";
+import { PropType, toRef } from 'vue';
+import type { FormKitFrameworkContext } from '@formkit/core';
 
 const props = defineProps({
   context: {
     type: Object as PropType<FormKitFrameworkContext>,
-    required: true,
-  },
+    required: true
+  }
 });
 
-const context = toRef(props, "context");
+const context = toRef(props, 'context');
 const node = context.value.node;
 
-node.props.inputType = "password";
-node.props.icon = "view";
+node.props.inputType = 'password';
+node.props.icon = 'view';
 
 const handleBlur = () => {
   context.value.handlers.blur();
 };
 
 const toggleType = () => {
-  if (node.props.inputType == "password") {
-    node.props.inputType = "text";
-    node.props.icon = "hide";
+  if (node.props.inputType == 'password') {
+    node.props.inputType = 'text';
+    node.props.icon = 'hide';
   } else {
-    node.props.inputType = "password";
-    node.props.icon = "view";
+    node.props.inputType = 'password';
+    node.props.icon = 'view';
   }
 };
 </script>

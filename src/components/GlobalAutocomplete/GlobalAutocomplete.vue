@@ -97,6 +97,7 @@ const setResult = (value: unknown) => {
 };
 
 const loadResults = (value: string) => {
+  // Uncomment before publish, this is just for test purpose to have some response
   // return props.options(value).then((response: unknown[]) => {
   //   results.value = response;
   //   return response;
