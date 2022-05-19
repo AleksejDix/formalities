@@ -69,8 +69,6 @@
       labelDescription="Num of bedrooms"
       hidden-label="Number of bedrooms"
     />
-
-    <pre>{{ data }}</pre>
   </FormKit>
 </template>
 
@@ -80,7 +78,6 @@ import GlobalButton from './GlobalButton/GlobalButton.vue';
 import FormSelect from './FormSelect/FormSelect.vue';
 import InputRange from './InputRange/InputRange.vue';
 import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
-
 const select = ref(null);
 const data = ref();
 const inputTypes = ref([
@@ -102,13 +99,13 @@ const inputTypes = ref([
   'checkbox',
   'radio',
   'range',
-  'select'
+  'select',
+  'autocomplete'
 ]);
 const inputOptions = ref({
   checkbox: ['I like Tailwind', 'I also like FormKit', 'I like other things too'],
   radio: ['I like Tailwind', 'I like FormKit', 'I like everything'],
   select: ['I like Tailwind', 'I like FormKit', 'I like everything']
 });
-
 const counterValue = ref(0);
 </script>

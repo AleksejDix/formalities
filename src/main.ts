@@ -6,6 +6,7 @@ import './assets/index.css';
 import InputCode from './components/InputCode/InputCode.vue';
 import InputPassword from './components/InputPassword/InputPassword.vue';
 import InputCounter from './components/CustomInputs/InputCounter/InputCounter.vue';
+import GlobalAutocomplete from './components/GlobalAutocomplete/GlobalAutocomplete.vue';
 
 import { de, fr, en, it } from '@formkit/i18n';
 
@@ -26,7 +27,8 @@ app.use(
         props: ['digits']
       }),
       passwordToggle: createInput(InputPassword),
-      counter: createInput(InputCounter)
+      counter: createInput(InputCounter),
+      autocomplete: createInput(GlobalAutocomplete)
     }
   })
 );

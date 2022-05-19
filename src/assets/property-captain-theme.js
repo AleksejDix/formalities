@@ -60,6 +60,18 @@ const counter = {
   input: 'dark:text-offwhite-100 w-14'
 };
 
+const autocomplete = {
+  input:
+    'border border-transparent hover:border-velvet-600 focus:border-velvet-600 focus:ring focus:ring-offset-2 focus:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-3 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed',
+  help: 'hidden',
+  label: 'hidden',
+  customLabel:
+    'inline-block pb-1 pr-6 text-16 text-denim-400 font-medium formkit-invalid:text-ruby-700',
+  item: 'bg-offwhite-100 dark:bg-offwhite-100 p-3 text-denim-700 text-16 font-normal',
+  activeItem: 'text-velvet-600',
+  options: 'border-1 border-denim-400 rounded-lg max-h-52 overflow-y-scroll mt-1'
+};
+
 export default {
   global,
   radio,
@@ -84,5 +96,6 @@ export default {
   submit: button,
   code,
   passwordToggle: { ...formInput, ...passwordToggle },
-  counter: counter
+  counter: counter,
+  autocomplete: autocomplete
 };
