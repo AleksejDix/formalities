@@ -33,6 +33,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  validation: {
+    type: String,
+    default: ''
+  },
   labelDescription: {
     type: String,
     default: ''
@@ -48,6 +52,10 @@ const props = defineProps({
   maxValue: {
     type: Number,
     default: 100
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 });
 </script>
