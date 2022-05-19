@@ -12,9 +12,9 @@
       ]"
       v-model="select"
     />
+    <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
     <GlobalOptions
       label="Radio input"
-      placeholder="Radio input"
       type="radio"
       :options="[
         { label: 'France', value: 'fr' },
@@ -26,9 +26,7 @@
     />
     <GlobalOptions
       label="Checkbox input"
-      placeholder="Checkbox input"
       type="checkbox"
-      validation="required"
       :options="[
         { label: 'France', value: 'fr' },
         { label: 'Germany', value: 'de' },
@@ -118,14 +116,12 @@ const inputTypes = ref([
   'date',
   'datetime-local',
   'month',
-  'search',
-  'tel',
   'time',
   'week',
   'hidden',
-  'button',
   'range',
-  'select'
+  'tel',
+  'search'
 ]);
 const inputOptions = ref({
   checkbox: ['I like Tailwind', 'I also like FormKit', 'I like other things too'],
@@ -136,4 +132,5 @@ const select = ref(null);
 const counterValue = ref(0);
 const radio = ref();
 const checkbox = ref();
+const toggle = ref(false);
 </script>
