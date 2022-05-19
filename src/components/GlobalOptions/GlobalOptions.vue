@@ -1,51 +1,45 @@
 <template>
   <FormKit
-    v-bind="$attrs"
     :type="formkitType"
     :label="label"
     :options="options"
     :validation="validation"
     :disabled="disabled"
-    :value="value"
     :input-class="type"
     :inner-class="{
       toggle: type === 'toggle',
-      checked: isChecked,
-      unchecked: !isChecked
+      checked: modelValue,
+      unchecked: !modelValue
     }"
     :decorator-class="
       (type,
       {
-        'translate-x-5': isChecked,
+        'translate-x-5': modelValue,
         toggle: type === 'toggle'
       })
     "
     @input="handleInput"
+    @node="setNode"
   >
   </FormKit>
 </template>
-<script lang="ts">
-export default {
-  inheritAttrs: false
-};
-</script>
 
 <script lang="ts" setup>
-import { PropType, computed, ref } from 'vue';
+import { PropType, computed, nextTick } from 'vue';
 
 interface ISelectOption {
   label: string;
   value: string | number;
 }
-
+const emit = defineEmits(['update:modelValue']);
 const props = defineProps({
   type: {
     type: String as PropType<'checkbox' | 'radio' | 'toggle'>,
     required: true
   },
-  value: {
-    type: Object as PropType<ISelectOption>,
-    default: null
+  modelValue: {
+    type: [Boolean, String, Object as PropType<ISelectOption[]>],
+    default: ''
   },
   options: {
     type: Array as PropType<ISelectOption[]>,
@@ -67,12 +61,13 @@ const props = defineProps({
 
 const formkitType = computed((): string => (props.type === 'toggle' ? 'checkbox' : props.type));
 
-const emit = defineEmits(['update']);
-const isChecked = ref(false);
+const setNode = (node) => {
+  // Value of formkit is set this way
+  nextTick(() => node.input(props.modelValue));
+};
 
 function handleInput(event: Event) {
-  isChecked.value = event;
-  emit('update', event);
+  emit('update:modelValue', event);
 }
 </script>
 <style>
