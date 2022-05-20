@@ -3,17 +3,30 @@
     <label :class="context.classes.customLabel">
       {{ context.label }}
     </label>
-    <input
-      type="search"
-      @input="onChange"
-      :placeholder="context.attrs.placeholder"
-      v-model="state.query"
-      @keydown.down="onArrowDown"
-      @keydown.up="onArrowUp"
-      @keydown.enter="onEnter"
-      @focus="handleFocus"
-      :class="context.classes.input"
-    />
+    <div class="relative">
+      <input
+        type="search"
+        @input="onChange"
+        :placeholder="context.attrs.placeholder"
+        v-model="state.query"
+        @keydown.down="onArrowDown"
+        @keydown.up="onArrowUp"
+        @keydown.enter="onEnter"
+        @focus="handleFocus"
+        :class="context.classes.input"
+      />
+      <div class="pointer-events-none absolute top-1/2 left-2 -translate-y-1/2 transform">
+        <slot v-if="$slots.prefix" name="prefix"></slot>
+      </div>
+      <button
+        v-if="isOpen && state.query"
+        @click="clearSearch"
+        type="button"
+        class="cursor-pointer absolute top-1/2 right-2 -translate-y-1/2 transform"
+      >
+        <slot v-if="$slots.sufix" name="sufix"></slot>
+      </button>
+    </div>
     <ul v-if="isOpen" :class="context.classes.options">
       <li
         v-for="(result, i) in results"
@@ -94,6 +107,10 @@ const setResult = (value: unknown) => {
   state.value.query = value.name;
   state.value.selection = value;
   state.value.state = 'idle';
+};
+
+const clearSearch = () => {
+  state.value.query = '';
 };
 
 const loadResults = (value: string) => {
@@ -187,3 +204,20 @@ watch(
   }
 );
 </script>
+<style scoped>
+/* clears the 'X' from Internet Explorer */
+input[type='search']::-ms-clear,
+input[type='search']::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+</style>

@@ -55,7 +55,7 @@ const counter = {
 
 const autocomplete = {
   input:
-    'border border-transparent hover:border-velvet-600 focus:border-velvet-600 focus:ring focus:ring-offset-2 focus:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-3 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed',
+    'border border-transparent hover:border-velvet-600 focus:border-velvet-600 focus:ring focus:ring-offset-2 focus:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-8 block w-full rounded-lg  text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed',
   help: 'hidden',
   label: 'hidden',
   customLabel:
