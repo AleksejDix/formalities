@@ -22,8 +22,8 @@ const button = {
 };
 
 const optionsInput = {
-  wrapper: 'flex items-center space-x-4',
-  label: 'block w-full flex-1 text-16 pt-1',
+  wrapper: 'global-options-wrapper flex items-center space-x-4',
+  label: 'global-options-label block w-full flex-1 text-16 pt-1',
   input: 'global-options-input',
   inner: 'global-options-inner',
   decorator: 'global-options-decorator'
