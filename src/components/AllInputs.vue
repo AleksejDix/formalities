@@ -13,6 +13,7 @@
       v-model="select"
     />
     <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
+    <GlobalPill label="Pill input" type="checkbox" v-model="pill" />
     <GlobalOptions
       label="Radio input"
       type="radio"
@@ -102,6 +103,8 @@ import FormSelect from './FormSelect/FormSelect.vue';
 import InputRange from './InputRange/InputRange.vue';
 import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
 import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
+import GlobalPill from './GlobalPill/GlobalPill.vue';
+
 const data = ref();
 const inputTypes = ref([
   'text',
@@ -132,4 +135,5 @@ const counterValue = ref(0);
 const radio = ref();
 const checkbox = ref();
 const toggle = ref(false);
+const pill = ref(false);
 </script>
