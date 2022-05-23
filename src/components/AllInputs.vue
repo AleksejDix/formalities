@@ -102,7 +102,6 @@ import FormSelect from './FormSelect/FormSelect.vue';
 import InputRange from './InputRange/InputRange.vue';
 import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
 import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
-
 const data = ref();
 const inputTypes = ref([
   'text',

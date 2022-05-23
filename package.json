@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "@formkit/vue": "^1.0.0-beta.6",
-    "vue": "^3.2.33"
+    "lodash-es": "4.17.21",
+    "vue": "^3.2.33",
+    "vue-tel-input": "^6.0.0-beta.7"
   },
   "devDependencies": {
     "@formkit/tailwindcss": "^1.0.0-beta.6",
