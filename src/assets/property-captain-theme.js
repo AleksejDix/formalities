@@ -33,17 +33,6 @@ const range = {
   input: 'form-range range-slider'
 };
 
-const code = {
-  inner: 'flex space-x-4',
-  digit:
-    'inline-block border border-transparent py-[11px] pl-3 block w-full rounded-lg text-denim-800 formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed focus:ring focus:ring-velvet-600 focus:ring-offset-2 focus:ring-offset-denim-900 focus:border-velvet-600 formkit-invalid:placeholder-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-invalid:focus:border-ruby-700'
-};
-
-const passwordToggle = {
-  inner: 'flex space-x-4',
-  button: button.input
-};
-
 const counter = {
   wrapper: 'flex items-center justify-between',
   label: 'hidden',
@@ -87,8 +76,6 @@ export default {
   range: range,
   button,
   submit: button,
-  code,
-  passwordToggle: { ...formInput, ...passwordToggle },
   counter: counter,
   autocomplete: autocomplete
 };
