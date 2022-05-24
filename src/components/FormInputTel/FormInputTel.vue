@@ -20,11 +20,7 @@
 </template>
 <script lang="ts">
 export default {
-  inheritAttrs: false,
-  model: {
-    prop: 'value',
-    event: 'update'
-  }
+  inheritAttrs: false
 };
 </script>
 <script lang="ts" setup>
@@ -33,10 +29,10 @@ import 'vue-tel-input/dist/vue-tel-input.css';
 import { ref, watch } from 'vue';
 import debounce from 'lodash-es/debounce';
 
-const emit = defineEmits(['update', 'validate']);
+const emit = defineEmits(['update:modelValue', 'validate']);
 
 const props = defineProps({
-  value: {
+  modelValue: {
     type: String,
     default: ''
   }
@@ -48,7 +44,7 @@ const handleInput = debounce((value: string): void => {
   if (isPristine.value) {
     isPristine.value = false;
   } else {
-    emit('update', value);
+    emit('update:modelValue', value);
   }
 }, 100);
 

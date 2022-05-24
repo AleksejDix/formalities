@@ -45,18 +45,14 @@
 </template>
 <script lang="ts">
 export default {
-  inheritAttrs: false,
-  model: {
-    prop: 'value',
-    event: 'update'
-  }
+  inheritAttrs: false
 };
 </script>
 <script lang="ts" setup>
 import { ref, computed, watch, nextTick, onDeactivated, onMounted, toRef } from 'vue';
 import type { PropType } from 'vue';
 import type { FormKitFrameworkContext } from '@formkit/core';
-const emit = defineEmits(['update']);
+const emit = defineEmits(['update:modelValue']);
 type ListBoxState = 'idle' | 'browsing' | 'searching';
 interface IListbox {
   state: ListBoxState;
@@ -69,7 +65,7 @@ const props = defineProps({
     type: Object as PropType<FormKitFrameworkContext>,
     required: true
   },
-  value: {
+  modelValue: {
     type: String,
     default: ''
   },
@@ -202,7 +198,7 @@ watch(
 watch(
   () => state.value.selection,
   (newValue: string) => {
-    emit('update', newValue);
+    emit('update:modelValue', newValue);
   }
 );
 
