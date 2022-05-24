@@ -22,7 +22,7 @@ const button = {
 };
 
 const optionsInput = {
-  wrapper: 'global-options-wrapper flex items-center space-x-4',
+  wrapper: 'global-options-wrapper',
   label: 'global-options-label dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
   input: 'global-options-input',
   inner: 'global-options-inner',
@@ -55,14 +55,14 @@ const counter = {
 
 const autocomplete = {
   input:
-    'border border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-3 pl-8 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed',
+    'border border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-3 pl-8 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed mb-1',
   help: 'hidden',
   label: 'hidden',
   customLabel:
     'inline-block pb-1 text-14 text-denim-900 dark:text-denim-400 font-medium dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700',
   item: 'bg-offwhite-100 dark:bg-offwhite-100 p-3 text-denim-700 text-16 font-normal',
   activeItem: 'text-velvet-600',
-  options: 'border-1 border-denim-400 rounded-lg max-h-52 overflow-y-scroll mt-1'
+  options: 'absolute w-full z-20 border-1 border-denim-400 rounded-lg max-h-52 overflow-y-scroll'
 };
 
 export default {

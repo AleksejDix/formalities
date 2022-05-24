@@ -1,5 +1,14 @@
 <template>
   <FormKit type="group" v-model="data">
+    <FormInput
+      v-for="type in inputTypes"
+      :key="type"
+      :label="`This is a ${type} input`"
+      :type="type"
+      :placeholder="`${type} input placeholder`"
+      :disabled="type === 'url' ? true : undefined"
+      :validation="type === 'email' ? 'required|email' : 'required'"
+    />
     <FormSelect
       label="Select input"
       placeholder="Select input"
@@ -12,8 +21,15 @@
       ]"
       v-model="select"
     />
+    <GlobalAutocomplete
+      v-model="autocomplete"
+      label="Test label"
+      placeholder="Test placeholder"
+      validation="required"
+    />
     <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
     <GlobalPill label="Pill input" type="checkbox" v-model="pill" />
+    <GlobalPill label="Pill input" type="checkbox" disabled v-model="pill" />
     <GlobalOptions
       label="Radio input"
       type="radio"
@@ -35,20 +51,6 @@
         { label: 'Italy', value: 'ie' }
       ]"
       v-model="checkbox"
-    />
-    <FormKit
-      v-for="type in inputTypes"
-      :key="type"
-      :label="`This is a ${type} input`"
-      :type="type"
-      :placeholder="`${type} input placeholder`"
-      :options="inputOptions[type] ? inputOptions[type] : null"
-      :digits="type === 'code' ? '4' : undefined"
-      :multiple="type === 'file'"
-      :disabled="type === 'date' ? true : undefined"
-      :validation="type === 'email' ? 'required|email' : 'required'"
-      :validation-visibility="type === 'email' ? 'live' : 'blur'"
-      :validation-label="type"
     />
     <GlobalButton variant="primary" type="icon">
       <template #prefix>
@@ -93,12 +95,6 @@
       labelDescription="Num of bedrooms"
       hidden-label="Number of bedrooms"
     />
-    <GlobalAutocomplete
-      v-model="autocomplete"
-      label="Test label"
-      placeholder="Test placeholder"
-      validation="required"
-    />
   </FormKit>
 </template>
 
@@ -111,6 +107,8 @@ import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
 import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
 import GlobalPill from './GlobalPill/GlobalPill.vue';
 import GlobalAutocomplete from './GlobalAutocomplete/GlobalAutocomplete.vue';
+import FormInput from './FormInput/FormInput.vue';
+
 const data = ref();
 const inputTypes = ref([
   'text',
@@ -119,22 +117,9 @@ const inputTypes = ref([
   'url',
   'password',
   'number',
-  'date',
-  'datetime-local',
-  'month',
   'time',
-  'week',
-  'hidden',
-  'range',
-  'select',
-  'tel',
-  'search'
+  'hidden'
 ]);
-const inputOptions = ref({
-  checkbox: ['I like Tailwind', 'I also like FormKit', 'I like other things too'],
-  radio: ['I like Tailwind', 'I like FormKit', 'I like everything'],
-  select: ['I like Tailwind', 'I like FormKit', 'I like everything']
-});
 const select = ref(null);
 const counterValue = ref(0);
 const radio = ref();

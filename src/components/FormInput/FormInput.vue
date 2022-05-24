@@ -22,6 +22,11 @@
 export default {
   inheritAttrs: false
 };
+const TYPES = ['text', 'textarea', 'email', 'url', 'password', 'number', 'time', 'hidden'];
+const includes =
+  (types: Array<string>) =>
+  (type: string): boolean =>
+    types.includes(type);
 </script>
 <script lang="ts" setup>
 const props = defineProps({
@@ -66,26 +71,4 @@ const handleUpdate = (value: string): void => {
   }
   emit('update', response);
 };
-</script>
-
-<script lang="ts">
-const TYPES = [
-  'text',
-  'email',
-  'url',
-  'password',
-  'number',
-  'date',
-  'datetime-local',
-  'month',
-  'search',
-  'tel',
-  'time',
-  'week',
-  'hidden'
-];
-const includes =
-  (types: Array<string>) =>
-  (type: string): boolean =>
-    types.includes(type);
 </script>
