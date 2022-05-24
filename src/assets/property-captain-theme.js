@@ -8,7 +8,7 @@ const global = {
   message: 'text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700',
   input: 'text-16 placeholder-denim-700 formkit-invalid:placeholder-ruby-700 ',
   help: 'text-14 text-denim-400 pt-1',
-  legend: 'text-16 dark:text-denim-400 font-medium'
+  legend: 'text-16 dark:text-offwhite-100 font-medium'
 };
 
 const formInput = {
