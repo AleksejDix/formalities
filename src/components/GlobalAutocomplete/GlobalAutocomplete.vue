@@ -12,6 +12,7 @@
         @keydown.down="onArrowDown"
         @keydown.up="onArrowUp"
         @keydown.enter="onEnter"
+        @keydown.escape="onEscape"
         @focus="handleFocus"
         :class="context.classes.input"
       />
@@ -34,6 +35,7 @@
         @click="setResult(result)"
         @mouseover="onMouseOver"
         @mouseleave="onMouseLeave"
+        :tabindex="state.selection.name === result.name ? -1 : 0"
         :class="[context.classes.item, i === arrowCounter && context.classes.activeItem]"
       >
         {{ result.name }}
@@ -97,7 +99,7 @@ const isOpen = computed((): boolean => {
 });
 
 const handleFocus = (event: Event): void => {
-  state.value.state = 'searching';
+  setState('searching');
   nextTick(() => {
     (event.target as HTMLElement).scrollIntoView({ block: 'end', behavior: 'smooth' });
   });
@@ -106,7 +108,7 @@ const handleFocus = (event: Event): void => {
 const setResult = (value: unknown) => {
   state.value.query = value.name;
   state.value.selection = value;
-  state.value.state = 'idle';
+  setState('idle');
 };
 
 const clearSearch = () => {
@@ -128,6 +130,10 @@ const loadResults = (value: string) => {
     });
 };
 
+const setState = (value: ListBoxState): void => {
+  state.value.state = value;
+};
+
 const select = (delta) => {
   const available = [...results.value];
   let idx = available.indexOf(state.value.selection) + delta;
@@ -142,7 +148,7 @@ const select = (delta) => {
 
 const handleClickOutside = (event: Event): void => {
   if (!document.querySelector('#autocomplete').contains(event.target)) {
-    state.value.state = 'idle';
+    setState('idle');
   }
 };
 
@@ -170,6 +176,11 @@ const onEnter = (): void => {
   setResult(results.value[arrowCounter.value]);
 };
 
+const onEscape = (): void => {
+  setState('idle');
+  state.value.selection = '';
+};
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
@@ -183,7 +194,7 @@ watch(
   (newValue: string) => {
     if (!newValue) {
       state.value.query = '';
-      state.value.selection = null;
+      state.value.selection = '';
     }
   }
 );

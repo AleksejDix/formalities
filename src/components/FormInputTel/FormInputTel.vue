@@ -65,7 +65,7 @@ watch(
 </script>
 <style lang="postcss">
 .vue-tel-input {
-  @apply relative flex rounded-lg border text-left dark:border-transparent bg-white dark:bg-white;
+  @apply relative flex rounded-lg border text-left border-denim-600 dark:border-denim-400 bg-white dark:bg-white;
 }
 .vue-tel-input.disabled .selection,
 .vue-tel-input.disabled .dropdown,
@@ -78,11 +78,10 @@ watch(
 .vti__dropdown.show {
   @apply max-h-60 overflow-y-scroll;
 }
-
+.vti__dropdown.open,
 .vti__dropdown:hover {
   @apply rounded-lg bg-offwhite-100;
 }
-
 .vti__selection {
   @apply flex items-center text-14;
 }
@@ -119,6 +118,6 @@ watch(
   @apply mr-4 inline-block self-center;
 }
 .vti__input {
-  @apply flex-1 rounded-lg border-none bg-transparent px-4 py-2 text-right outline-none;
+  @apply flex-1 rounded-lg border-none bg-transparent px-4 py-2 text-right outline-none placeholder-denim-700 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
 }
 </style>
