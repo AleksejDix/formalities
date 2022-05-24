@@ -13,7 +13,7 @@ const global = {
 
 const formInput = {
   input:
-    'border border-transparent border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-3 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed'
+    'border border-transparent border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-3 pl-3 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed'
 };
 
 const button = {
@@ -23,7 +23,7 @@ const button = {
 
 const optionsInput = {
   wrapper: 'global-options-wrapper flex items-center space-x-4',
-  label: 'global-options-label block w-full flex-1 text-16 pt-1',
+  label: 'global-options-label dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
   input: 'global-options-input',
   inner: 'global-options-inner',
   decorator: 'global-options-decorator'
@@ -55,7 +55,7 @@ const counter = {
 
 const autocomplete = {
   input:
-    'border border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-[11px] pl-8 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed',
+    'border border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-3 pl-8 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed',
   help: 'hidden',
   label: 'hidden',
   customLabel:
