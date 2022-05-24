@@ -93,6 +93,12 @@
       labelDescription="Num of bedrooms"
       hidden-label="Number of bedrooms"
     />
+    <GlobalAutocomplete
+      v-model="autocomplete"
+      label="Test label"
+      placeholder="Test placeholder"
+      validation="required"
+    />
   </FormKit>
 </template>
 
@@ -104,7 +110,7 @@ import InputRange from './InputRange/InputRange.vue';
 import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
 import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
 import GlobalPill from './GlobalPill/GlobalPill.vue';
-
+import GlobalAutocomplete from './GlobalAutocomplete/GlobalAutocomplete.vue';
 const data = ref();
 const inputTypes = ref([
   'text',
@@ -121,7 +127,6 @@ const inputTypes = ref([
   'hidden',
   'range',
   'select',
-  'autocomplete',
   'tel',
   'search'
 ]);
@@ -136,4 +141,5 @@ const radio = ref();
 const checkbox = ref();
 const toggle = ref(false);
 const pill = ref(false);
+const autocomplete = ref('');
 </script>
