@@ -6,7 +6,7 @@ import './assets/index.css';
 import InputCode from './components/InputCode/InputCode.vue';
 import InputPassword from './components/InputPassword/InputPassword.vue';
 import InputCounter from './components/CustomInputs/InputCounter/InputCounter.vue';
-import GlobalAutocomplete from './components/GlobalAutocomplete/GlobalAutocomplete.vue';
+import InputAutocomplete from './components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
 import FormInputTel from './components/FormInputTel/FormInputTel.vue';
 import { de, fr, en, it } from '@formkit/i18n';
 
@@ -28,7 +28,7 @@ app.use(
       }),
       passwordToggle: createInput(InputPassword),
       counter: createInput(InputCounter),
-      autocomplete: createInput(GlobalAutocomplete),
+      autocomplete: createInput(InputAutocomplete),
       tel: createInput(FormInputTel)
     }
   })
