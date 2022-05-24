@@ -69,7 +69,7 @@ watch(
   @apply cursor-not-allowed;
 }
 .vti__dropdown {
-  @apply flex cursor-pointer flex-col content-center justify-center p-2;
+  @apply flex cursor-pointer flex-col content-center justify-center p-2 rounded-lg  hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
 }
 .vti__dropdown.show {
   @apply max-h-60 overflow-y-scroll;

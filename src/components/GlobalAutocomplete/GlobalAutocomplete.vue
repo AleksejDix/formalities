@@ -4,18 +4,11 @@
       {{ context.label }}
     </label>
     <div class="relative">
-      <input
-        type="search"
-        @input="onChange"
-        :placeholder="context.attrs.placeholder"
-        v-model="state.query"
-        @keydown.down="onArrowDown"
-        @keydown.up="onArrowUp"
-        @keydown.enter="onEnter"
-        @keydown.escape="onEscape"
-        @focus="handleFocus"
-        :class="context.classes.input"
-      />
+      <input type="search" @input="onChange" :placeholder="context.attrs.placeholder"
+      v-model="state.query" @keydown.down="onArrowDown" @keydown.up="onArrowUp"
+      @keydown.enter="onEnter" @keydown.escape="onEscape" @focus="handleFocus"
+      :class="context.classes.input" role="combobox" aria-expanded=true/false autocomplete="off"
+      aria-autocomplete="list" aria-control="autocomplete-listbox" />
       <div class="pointer-events-none absolute top-1/2 left-2 -translate-y-1/2 transform">
         <slot v-if="$slots.prefix" name="prefix"></slot>
       </div>
@@ -28,14 +21,23 @@
         <slot v-if="$slots.sufix" name="sufix"></slot>
       </button>
     </div>
-    <ul v-if="isOpen" :class="context.classes.options">
+    <ul
+      id="autocomplete-listbox"
+      :aria-label="context.label"
+      role="listbox"
+      v-if="isOpen"
+      :class="context.classes.options"
+    >
       <li
         v-for="(result, i) in results"
         :key="i"
         @click="setResult(result)"
         @mouseover="onMouseOver"
         @mouseleave="onMouseLeave"
-        :tabindex="state.selection.name === result.name ? -1 : 0"
+        role="option"
+        :aria-posinset="i"
+        :aria-selected="state.selection.name === result.name"
+        :tabindex="state.selection.name === result.name ? 0 : -1"
         :class="[context.classes.item, i === arrowCounter && context.classes.activeItem]"
       >
         {{ result.name }}
@@ -49,7 +51,7 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { ref, computed, watch, nextTick, onDeactivated, onMounted, toRef } from 'vue';
+import { ref, computed, watch, onDeactivated, onMounted, toRef } from 'vue';
 import type { PropType } from 'vue';
 import type { FormKitFrameworkContext } from '@formkit/core';
 const emit = defineEmits(['update:modelValue']);
@@ -96,9 +98,6 @@ const isOpen = computed((): boolean => {
 
 const handleFocus = (event: Event): void => {
   setState('searching');
-  nextTick(() => {
-    (event.target as HTMLElement).scrollIntoView({ block: 'end', behavior: 'smooth' });
-  });
 };
 
 const setResult = (value: unknown) => {
