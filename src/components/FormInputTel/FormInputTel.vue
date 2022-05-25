@@ -61,7 +61,7 @@ watch(
 </script>
 <style lang="postcss">
 .vue-tel-input {
-  @apply relative flex rounded-lg border text-left border-denim-600 dark:border-denim-400 bg-white dark:bg-white;
+  @apply relative flex rounded-lg border text-left border-denim-600 dark:border-denim-400 bg-white dark:bg-white focus-within:shadow-none;
 }
 .vue-tel-input.disabled .selection,
 .vue-tel-input.disabled .dropdown,
@@ -76,7 +76,7 @@ watch(
 }
 .vti__dropdown.open,
 .vti__dropdown:hover {
-  @apply rounded-lg bg-offwhite-100;
+  @apply rounded-lg bg-transparent;
 }
 .vti__selection {
   @apply flex items-center text-14;

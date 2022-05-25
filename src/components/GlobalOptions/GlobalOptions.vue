@@ -5,6 +5,7 @@
     :options="options"
     :validation="validation"
     :disabled="disabled"
+    :wrapper-class="type"
     :input-class="type"
     :inner-class="{
       toggle: type === 'toggle',
@@ -71,6 +72,11 @@ function handleInput(event: Event) {
 }
 </script>
 <style>
+.global-options-wrapper.checkbox,
+.global-options-wrapper.radio,
+.global-options-wrapper.toggle {
+  @apply flex items-center space-x-4;
+}
 .global-options-input.checkbox {
   @apply form-checkbox rounded cursor-pointer h-6 w-6
   dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900

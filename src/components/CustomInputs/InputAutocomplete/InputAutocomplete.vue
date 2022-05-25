@@ -20,30 +20,30 @@
       >
         <slot v-if="$slots.sufix" name="sufix"></slot>
       </button>
-    </div>
-    <ul
-      id="autocomplete-listbox"
-      :aria-label="context.label"
-      role="listbox"
-      v-if="isOpen"
-      :class="context.classes.options"
-    >
-      <li
-        v-for="(result, i) in results"
-        :key="i"
-        @click="setResult(result)"
-        @mouseover="onMouseOver"
-        @mouseleave="onMouseLeave"
-        role="option"
-        :aria-posinset="i"
-        :aria-selected="state.selection.name === result.name"
-        :tabindex="state.selection.name === result.name ? 0 : -1"
-        :class="[context.classes.item, i === arrowCounter && context.classes.activeItem]"
+      <ul
+        id="autocomplete-listbox"
+        :aria-label="context.label"
+        role="listbox"
+        v-if="isOpen"
+        :class="context.classes.options"
       >
-        <!-- or pass slot so you can choose what to put inside <slot :result="result"></slot> -->
-        {{ result.name }}
-      </li>
-    </ul>
+        <li
+          v-for="(result, i) in results"
+          :key="i"
+          @click="setResult(result)"
+          @mouseover="onMouseOver"
+          @mouseleave="onMouseLeave"
+          role="option"
+          :aria-posinset="i"
+          :aria-selected="state.selection.name === result.name"
+          :tabindex="state.selection.name === result.name ? 0 : -1"
+          :class="[context.classes.item, i === arrowCounter && context.classes.activeItem]"
+        >
+          <!-- or pass slot so you can choose what to put inside <slot :result="result"></slot> -->
+          {{ result.name }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script lang="ts">

@@ -3,8 +3,6 @@ import App from './App.vue';
 import { plugin, defaultConfig, createInput } from '@formkit/vue';
 import { generateClasses } from '@formkit/tailwindcss';
 import './assets/index.css';
-import InputCode from './components/InputCode/InputCode.vue';
-import InputPassword from './components/InputPassword/InputPassword.vue';
 import InputCounter from './components/CustomInputs/InputCounter/InputCounter.vue';
 import InputAutocomplete from './components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
 import FormInputTel from './components/FormInputTel/FormInputTel.vue';
@@ -23,10 +21,6 @@ app.use(
       classes: generateClasses(pctTheme)
     },
     inputs: {
-      code: createInput(InputCode, {
-        props: ['digits']
-      }),
-      passwordToggle: createInput(InputPassword),
       counter: createInput(InputCounter),
       autocomplete: createInput(InputAutocomplete),
       tel: createInput(FormInputTel)

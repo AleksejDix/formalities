@@ -76,14 +76,14 @@ const props = defineProps({
 }
 
 .global-button.base {
-  @apply py-[11px] px-[23px] text-16;
+  @apply py-3 px-6 text-16;
 }
 
 .global-button.large {
-  @apply py-[11px] px-[23px] text-20;
+  @apply py-3 px-6 text-20;
 }
 
 .global-button.icon {
-  @apply px-[15px];
+  @apply px-3;
 }
 </style>

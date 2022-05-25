@@ -5,14 +5,19 @@
     :options="options"
     :validation="validation"
     :disabled="disabled"
-    wrapper-class="pill"
+    :wrapper-class="{
+      pill: true,
+      disabled: disabled
+    }"
     input-class="pill"
     :label-class="{
       pill: true,
+      disabled: disabled,
       checked: modelValue
     }"
     :decorator-class="{
       pill: true,
+      disabled: disabled,
       checked: modelValue
     }"
     @input="handleInput"
@@ -80,14 +85,23 @@ function handleInput(event: Event) {
 .global-options-decorator.pill.checked {
   @apply bg-velvet-600 ring-velvet-600;
 }
+.global-options-decorator.pill.disabled {
+  @apply bg-denim-400 ring-denim-400;
+}
 .global-options-wrapper.pill {
-  @apply relative flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out;
+  @apply relative inline-flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out;
+}
+.global-options-wrapper.pill.disabled {
+  @apply pointer-events-none;
 }
 .global-options-label.pill {
-  @apply z-10 dark:text-offwhite-100;
+  @apply z-10 dark:text-offwhite-100 px-6;
 }
 .global-options-label.pill.checked {
   @apply text-offwhite-100;
+}
+.global-options-label.pill.disabled {
+  @apply text-denim-500;
 }
 .global-options-input.pill {
   @apply z-30 sr-only;
