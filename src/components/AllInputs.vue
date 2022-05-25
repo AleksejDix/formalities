@@ -118,7 +118,8 @@ const inputTypes = ref([
   'password',
   'number',
   'time',
-  'hidden'
+  'hidden',
+  'tel'
 ]);
 const select = ref(null);
 const counterValue = ref(0);

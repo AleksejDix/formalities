@@ -4,13 +4,26 @@
       {{ context.label }}
     </label>
     <div class="relative">
-      <input type="search" @input="onChange" :placeholder="context.attrs.placeholder"
-      v-model="state.query" @keydown.down="onArrowDown" @keydown.up="onArrowUp"
-      @keydown.enter="onEnter" @keydown.escape="onEscape" @focus="handleFocus"
-      :class="context.classes.input" role="combobox" aria-expanded=true/false autocomplete="off"
-      aria-autocomplete="list" aria-control="autocomplete-listbox" />
+      <input
+        type="search"
+        @input="onChange"
+        :placeholder="context.attrs.placeholder"
+        v-model="state.query"
+        @keydown.down="onArrowDown"
+        @keydown.up="onArrowUp"
+        @keydown.enter="onEnter"
+        @keydown.escape="onEscape"
+        @focus="handleFocus"
+        :class="context.classes.input"
+        role="combobox"
+        autocomplete="off"
+        aria-autocomplete="list"
+        aria-control="autocomplete-listbox"
+      />
       <div class="pointer-events-none absolute top-1/2 left-2 -translate-y-1/2 transform">
-        <slot v-if="$slots.prefix" name="prefix"></slot>
+        <!-- prefix and suffix slots are taken by default, right now its not possible to pass other
+        slots if we want to use Formkit with default type-->
+        <slot name="prefix"></slot>
       </div>
       <button
         v-if="isOpen && state.query"
@@ -18,7 +31,7 @@
         type="button"
         class="cursor-pointer absolute top-1/2 right-2 -translate-y-1/2 transform"
       >
-        <slot v-if="$slots.sufix" name="sufix"></slot>
+        <slot name="suffix"></slot>
       </button>
       <ul
         id="autocomplete-listbox"
@@ -29,7 +42,7 @@
       >
         <li
           v-for="(result, i) in results"
-          :key="i"
+          :key="`option-${i}`"
           @click="setResult(result)"
           @mouseover="onMouseOver"
           @mouseleave="onMouseLeave"
@@ -89,7 +102,7 @@ const props = defineProps({
 });
 const context = toRef(props, 'context');
 const results = ref([]);
-const arrowCounter = ref();
+const arrowCounter = ref(0);
 const state = ref<IListbox>({
   state: 'idle',
   query: '',
@@ -136,13 +149,22 @@ const setState = (value: ListBoxState): void => {
 const select = (delta) => {
   const available = [...results.value];
   let idx = available.indexOf(state.value.selection) + delta;
-  arrowCounter.value = idx;
+  arrowCounter.value = idx < 0 ? available.length - 1 : idx >= available.length ? 0 : idx;
   if (idx >= available.length) {
     idx = 0;
   } else if (idx < 0) {
     idx = available.length - 1;
   }
+  state.value.query = available[idx].name;
   state.value.selection = available[idx];
+  if (isOpen.value)
+    document.getElementById('autocomplete-listbox').scrollTop =
+      idx <= 0
+        ? 0
+        : idx === available.length - 1
+        ? document.getElementById('autocomplete-listbox').scrollHeight
+        : document.getElementById('autocomplete-listbox').querySelector('.formkit-active-item')
+            .offsetTop - 100;
 };
 
 const handleClickOutside = (event: Event): void => {
@@ -208,7 +230,7 @@ watch(
 watch(
   () => state.value.query,
   (value: string) => {
-    if (value && value.length > 2) {
+    if (value && value.length > 2 && !state.value.selection) {
       loadResults(value);
     }
   }

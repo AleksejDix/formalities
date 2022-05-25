@@ -114,6 +114,6 @@ watch(
   @apply mr-4 inline-block self-center;
 }
 .vti__input {
-  @apply flex-1 rounded-lg border-none bg-transparent px-4 py-2 text-left outline-none placeholder-denim-700  hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
+  @apply flex-1 rounded-lg border-none bg-transparent px-3 py-2 text-left outline-none placeholder-denim-700  hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
 }
 </style>
