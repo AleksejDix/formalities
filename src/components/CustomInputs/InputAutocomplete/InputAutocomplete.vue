@@ -115,6 +115,7 @@ const clearSearch = () => {
 
 const loadResults = (value: string) => {
   // Uncomment before publish, this is just for test purpose to have some response
+  // if(typeof props.options !== 'function') return results.value = props.options
   // return props.options(value).then((response: unknown[]) => {
   //   results.value = response;
   //   return response;

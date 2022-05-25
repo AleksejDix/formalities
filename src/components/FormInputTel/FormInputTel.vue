@@ -69,7 +69,7 @@ watch(
   @apply cursor-not-allowed;
 }
 .vti__dropdown {
-  @apply flex cursor-pointer flex-col content-center justify-center p-2 rounded-lg  hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
+  @apply flex bg-offwhite-100 dark:bg-offwhite-100 cursor-pointer flex-col content-center justify-center p-2 rounded-lg  hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
 }
 .vti__dropdown.show {
   @apply max-h-60 overflow-y-scroll;
@@ -114,6 +114,6 @@ watch(
   @apply mr-4 inline-block self-center;
 }
 .vti__input {
-  @apply flex-1 rounded-lg border-none bg-transparent px-4 py-2 text-right outline-none placeholder-denim-700 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
+  @apply flex-1 rounded-lg border-none bg-transparent px-4 py-2 text-left outline-none placeholder-denim-700  hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600;
 }
 </style>
