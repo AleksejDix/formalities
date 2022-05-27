@@ -11,6 +11,7 @@
     :minValue="minValue"
     :maxValue="maxValue"
     @input="$emit('update', $event.target)"
+    :validation-visibility="validationVisibility"
   >
   </FormKit>
 </template>
@@ -56,6 +57,10 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  validationVisibility: {
+    type: String,
+    default: 'blur'
   }
 });
 </script>

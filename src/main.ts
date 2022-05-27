@@ -5,7 +5,7 @@ import { generateClasses } from '@formkit/tailwindcss';
 import './assets/index.css';
 import InputCounter from './components/CustomInputs/InputCounter/InputCounter.vue';
 import InputAutocomplete from './components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
-import FormInputTel from './components/FormInputTel/FormInputTel.vue';
+import InputTel from './components/CustomInputs/InputTel/InputTel.vue';
 import { de, fr, en, it } from '@formkit/i18n';
 
 import pctTheme from './assets/property-captain-theme.js';
@@ -23,7 +23,7 @@ app.use(
     inputs: {
       counter: createInput(InputCounter),
       autocomplete: createInput(InputAutocomplete),
-      tel: createInput(FormInputTel)
+      tel: createInput(InputTel)
     }
   })
 );

@@ -8,6 +8,7 @@
       :placeholder="`${type} input placeholder`"
       :disabled="type === 'url' ? true : undefined"
       :validation="type === 'email' ? 'required|email' : 'required'"
+      validation-visibility="live"
     />
     <FormSelect
       label="Select input"
@@ -28,7 +29,19 @@
       validation="required"
     />
     <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
-    <GlobalPill label="Pill input" type="checkbox" v-model="pill" />
+    <GlobalPill
+      label="Pill input"
+      :options="[
+        { label: 'France', value: 'fr' },
+        { label: 'Germany', value: 'de' },
+        { label: 'Spain', value: 'es' },
+        { label: 'Italy', value: 'ie' }
+      ]"
+      type="checkbox"
+      v-model="pill"
+      validation="required"
+    />
+    <div class="text-offwhite-100">{{ pill }}</div>
     <GlobalPill label="Pill input" type="checkbox" disabled v-model="pill" />
     <GlobalOptions
       label="Radio input"
@@ -39,8 +52,11 @@
         { label: 'Spain', value: 'es' },
         { label: 'Italy', value: 'ie' }
       ]"
+      validation="required"
       v-model="radio"
+      validationVisibility="live"
     />
+    <div class="text-offwhite-100">{{ radio }}</div>
     <GlobalOptions
       label="Checkbox input"
       type="checkbox"
@@ -50,8 +66,10 @@
         { label: 'Spain', value: 'es' },
         { label: 'Italy', value: 'ie' }
       ]"
+      validation="required"
       v-model="checkbox"
     />
+    <div class="text-offwhite-100">{{ checkbox }}</div>
     <GlobalButton variant="primary" type="icon">
       <template #prefix>
         <svg
@@ -94,7 +112,10 @@
       label="Bedrooms"
       labelDescription="Num of bedrooms"
       hidden-label="Number of bedrooms"
+      validation="required|min:1"
+      validationVisibility="dirty"
     />
+    <FormInputTel label="Phone number" placeholder="Telephone input placeholder" v-model="phone" />
   </FormKit>
 </template>
 
@@ -108,7 +129,7 @@ import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
 import GlobalPill from './GlobalPill/GlobalPill.vue';
 import GlobalAutocomplete from './GlobalAutocomplete/GlobalAutocomplete.vue';
 import FormInput from './FormInput/FormInput.vue';
-
+import FormInputTel from './FormInputTel/FormInputTel.vue';
 const data = ref();
 const inputTypes = ref([
   'text',
@@ -118,14 +139,14 @@ const inputTypes = ref([
   'password',
   'number',
   'time',
-  'hidden',
-  'tel'
+  'hidden'
 ]);
 const select = ref(null);
 const counterValue = ref(0);
 const radio = ref();
-const checkbox = ref();
+const checkbox = ref(['fr']);
 const toggle = ref(false);
-const pill = ref(false);
+const pill = ref(['fr']);
 const autocomplete = ref('');
+const phone = ref('');
 </script>

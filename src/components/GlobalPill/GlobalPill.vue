@@ -12,16 +12,15 @@
     input-class="pill"
     :label-class="{
       pill: true,
-      disabled: disabled,
-      checked: modelValue
+      disabled: disabled
     }"
     :decorator-class="{
       pill: true,
-      disabled: disabled,
-      checked: modelValue
+      disabled: disabled
     }"
     @input="handleInput"
     @node="setNode"
+    :validation-visibility="validationVisibility"
   >
   </FormKit>
 </template>
@@ -32,7 +31,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { PropType, ref, nextTick } from 'vue';
+import { PropType, nextTick } from 'vue';
 
 interface ISelectOption {
   label: string;
@@ -45,8 +44,8 @@ const props = defineProps({
     required: true
   },
   modelValue: {
-    type: Object as PropType<ISelectOption>,
-    default: null
+    type: [String, Number, Boolean],
+    required: true
   },
   options: {
     type: Array as PropType<ISelectOption[]>,
@@ -63,18 +62,20 @@ const props = defineProps({
   validation: {
     type: String,
     default: ''
+  },
+  validationVisibility: {
+    type: String,
+    default: 'blur'
   }
 });
 
 const emit = defineEmits(['update:modelValue']);
-const isChecked = ref(false);
 
 const setNode = (node) => {
   nextTick(() => node.input(props.modelValue));
 };
 
 function handleInput(event: Event) {
-  isChecked.value = event;
   emit('update:modelValue', event);
 }
 </script>
@@ -82,15 +83,25 @@ function handleInput(event: Event) {
 .global-options-decorator.pill {
   @apply absolute inset-0 cursor-pointer whitespace-nowrap rounded-full bg-offwhite-100 px-4 py-2.5 ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:text-offwhite-100 dark:ring-white;
 }
-.global-options-decorator.pill.checked {
-  @apply bg-velvet-600 ring-velvet-600;
-}
-.global-options-decorator.pill.disabled {
-  @apply bg-denim-400 ring-denim-400;
-}
 .global-options-wrapper.pill {
   @apply relative inline-flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out;
 }
+input:checked ~ .global-options-decorator.pill {
+  @apply border-offwhite-100 bg-velvet-600 text-offwhite-100 ring-velvet-600;
+}
+
+input:disabled ~ .global-options-decorator.pill {
+  @apply pointer-events-none bg-denim-400 text-denim-500 ring-denim-400;
+}
+
+input:active ~ .global-options-decorator.pill {
+  @apply scale-90 transition duration-200 ease-out;
+}
+
+input:focus-visible ~ .global-options-decorator.pill {
+  @apply outline outline-2 outline-offset-4 outline-velvet-600 ring-white;
+}
+
 .global-options-wrapper.pill.disabled {
   @apply pointer-events-none;
 }

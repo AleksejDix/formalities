@@ -21,6 +21,7 @@
     "
     @input="handleInput"
     @node="setNode"
+    :validation-visibility="validationVisibility"
   >
   </FormKit>
 </template>
@@ -39,8 +40,8 @@ const props = defineProps({
     required: true
   },
   modelValue: {
-    type: [Boolean, String, Object as PropType<ISelectOption[]>],
-    default: ''
+    type: [String, Number, Boolean],
+    required: true
   },
   options: {
     type: Array as PropType<ISelectOption[]>,
@@ -57,11 +58,13 @@ const props = defineProps({
   validation: {
     type: String,
     default: ''
+  },
+  validationVisibility: {
+    type: String,
+    default: 'blur'
   }
 });
-
 const formkitType = computed((): string => (props.type === 'toggle' ? 'checkbox' : props.type));
-
 const setNode = (node) => {
   // Value of formkit is set this way
   nextTick(() => node.input(props.modelValue));
