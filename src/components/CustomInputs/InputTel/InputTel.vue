@@ -47,11 +47,10 @@ const isPristine = ref(true);
 const phone = ref('');
 
 const handleInput = debounce((event: Event): void => {
-  console.log('context', context.value);
   if (isPristine.value) {
     isPristine.value = false;
   } else {
-    node.input(event.target.value)
+    node.input(event.target.value);
   }
 }, 100);
 

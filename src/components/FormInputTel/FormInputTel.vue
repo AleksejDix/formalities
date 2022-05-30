@@ -10,7 +10,7 @@
     @validate="handleValidate"
     :validation-visibility="validationVisibility"
     :validation-messages="{
-      isPhoneValid: validationMessage,
+      isPhoneValid: validationMessage
     }"
   >
   </FormKit>
@@ -64,5 +64,5 @@ const handleValidate = (event: Event): void => {
 
 const isPhoneValid = (): boolean => {
   return isValid.value;
-}
+};
 </script>
