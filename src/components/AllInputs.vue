@@ -1,5 +1,7 @@
 <template>
   <FormKit type="group" v-model="data">
+    <FormInputRange label="Range" v-model="range" />
+    {{ range }}
     <FormInput
       v-for="type in inputTypes"
       :key="type"
@@ -8,7 +10,6 @@
       :placeholder="`${type} input placeholder`"
       :disabled="type === 'url' ? true : undefined"
       :validation="type === 'email' ? 'required|email' : 'required'"
-      validation-visibility="live"
     />
     <FormSelect
       label="Select input"
@@ -123,7 +124,7 @@
 import { ref } from 'vue';
 import GlobalButton from './GlobalButton/GlobalButton.vue';
 import FormSelect from './FormSelect/FormSelect.vue';
-import InputRange from './InputRange/InputRange.vue';
+import FormInputRange from './FormInputRange/FormInputRange.vue';
 import GlobalCounter from './GlobalCounter/GlobalCounter.vue';
 import GlobalOptions from './GlobalOptions/GlobalOptions.vue';
 import GlobalPill from './GlobalPill/GlobalPill.vue';
@@ -143,10 +144,11 @@ const inputTypes = ref([
 ]);
 const select = ref(null);
 const counterValue = ref(0);
-const radio = ref();
+const radio = ref('');
 const checkbox = ref(['fr']);
 const toggle = ref(false);
 const pill = ref(['fr']);
 const autocomplete = ref('');
 const phone = ref('');
+const range = ref(0);
 </script>

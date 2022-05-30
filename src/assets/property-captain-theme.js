@@ -2,8 +2,7 @@ const global = {
   wrapper: '',
   outer: 'pt-2 pb-2',
   prefix: 'border bg-ruby-700 w-10 b-10',
-  label:
-    'inline-block pb-1 text-14 text-denim-900 dark:text-denim-400 font-medium dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700',
+  label: 'inline-block pb-1 text-14 font-medium',
   messages: 'pt-1',
   message: 'text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700',
   input: 'text-16 placeholder-denim-700 formkit-invalid:placeholder-ruby-700 ',
@@ -12,6 +11,8 @@ const global = {
 };
 
 const formInput = {
+  label:
+    'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700',
   input:
     'border border-transparent border-denim-600 dark:border-denim-400 hover:border-velvet-600 focus:border-velvet-600 focus:ring-2 focus:ring-offset-2 focus:dark:ring-offset-denim-900 focus:ring-velvet-600 py-3 pl-3 block w-full rounded-lg text-denim-900 formkit-disabled:bg-denim-400 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:cursor-not-allowed bg-offwhite-100'
 };
@@ -30,6 +31,8 @@ const optionsInput = {
 };
 
 const range = {
+  label:
+    'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700',
   input: 'form-range range-slider'
 };
 
