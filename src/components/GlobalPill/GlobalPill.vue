@@ -94,7 +94,7 @@ input:checked ~ .global-options-label.pill {
 }
 
 input:disabled ~ .global-options-decorator.pill {
-  @apply pointer-events-none bg-denim-400 text-denim-500 ring-denim-400;
+  @apply pointer-events-none bg-denim-400  ring-denim-400;
 }
 
 input:active ~ .global-options-decorator.pill {
@@ -112,7 +112,7 @@ input:focus-visible ~ .global-options-decorator.pill {
   @apply z-10  px-6;
 }
 .global-options-label.pill.disabled {
-  @apply text-denim-500;
+  @apply text-denim-700;
 }
 .global-options-input.pill {
   @apply z-30 sr-only;
