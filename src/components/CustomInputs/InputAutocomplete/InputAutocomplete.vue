@@ -87,7 +87,7 @@ const props = defineProps({
   },
   options: {
     type: [Function, Array],
-    required: true
+    default: () => []
   },
   // to be used before we release
   trackBy: {

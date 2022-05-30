@@ -40,7 +40,7 @@ const props = defineProps({
     required: true
   },
   modelValue: {
-    type: [String, Number, Boolean],
+    type: [String, Number, Boolean, Array],
     required: true
   },
   options: {

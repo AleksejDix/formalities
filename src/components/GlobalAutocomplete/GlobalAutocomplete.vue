@@ -25,7 +25,7 @@ const props = defineProps({
   },
   options: {
     type: [Function, Array],
-    required: true
+    default: () => []
   },
   label: {
     type: String,

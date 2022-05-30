@@ -6,6 +6,9 @@ import './assets/index.css';
 import InputCounter from './components/CustomInputs/InputCounter/InputCounter.vue';
 import InputAutocomplete from './components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
 import InputTel from './components/CustomInputs/InputTel/InputTel.vue';
+import InputRange from './components/CustomInputs/InputRange/InputRange.vue';
+import messages from './formkit.config';
+
 import { de, fr, en, it } from '@formkit/i18n';
 
 import pctTheme from './assets/property-captain-theme.js';
@@ -23,8 +26,10 @@ app.use(
     inputs: {
       counter: createInput(InputCounter),
       autocomplete: createInput(InputAutocomplete),
-      tel: createInput(InputTel)
-    }
+      tel: createInput(InputTel),
+      range: createInput(InputRange)
+    },
+    messages: messages
   })
 );
 
