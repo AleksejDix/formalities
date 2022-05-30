@@ -1,7 +1,5 @@
 <template>
   <FormKit type="group" v-model="data">
-    <FormInputRange label="Range" v-model="range" />
-    {{ range }}
     <FormInput
       v-for="type in inputTypes"
       :key="type"
@@ -29,6 +27,9 @@
       placeholder="Test placeholder"
       validation="required"
     />
+    <FormInputTel label="Phone number" placeholder="Telephone input placeholder" v-model="phone" />
+    <FormInputRange label="Range" v-model="range" />
+    {{ range }}
     <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
     <GlobalPill
       label="Pill input"
@@ -42,7 +43,6 @@
       v-model="pill"
       validation="required"
     />
-    <div class="text-offwhite-100">{{ pill }}</div>
     <GlobalPill label="Pill input" type="checkbox" disabled v-model="pill" />
     <GlobalOptions
       label="Radio input"
@@ -57,7 +57,6 @@
       v-model="radio"
       validationVisibility="live"
     />
-    <div class="text-offwhite-100">{{ radio }}</div>
     <GlobalOptions
       label="Checkbox input"
       type="checkbox"
@@ -70,7 +69,14 @@
       validation="required"
       v-model="checkbox"
     />
-    <div class="text-offwhite-100">{{ checkbox }}</div>
+    <GlobalCounter
+      v-model="counterValue"
+      label="Bedrooms"
+      labelDescription="Num of bedrooms"
+      hidden-label="Number of bedrooms"
+      validation="required|min:1"
+      validationVisibility="dirty"
+    />
     <GlobalButton variant="primary" type="icon">
       <template #prefix>
         <svg
@@ -105,18 +111,6 @@
     <GlobalButton label="critical" variant="critical" />
     <GlobalButton disabled label="large" size="large" />
     <GlobalButton label="submit" type="submit" />
-
-    <InputRange label="Select input" placeholder="Select input" />
-
-    <GlobalCounter
-      v-model="counterValue"
-      label="Bedrooms"
-      labelDescription="Num of bedrooms"
-      hidden-label="Number of bedrooms"
-      validation="required|min:1"
-      validationVisibility="dirty"
-    />
-    <FormInputTel label="Phone number" placeholder="Telephone input placeholder" v-model="phone" />
   </FormKit>
 </template>
 

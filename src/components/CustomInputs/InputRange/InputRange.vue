@@ -8,23 +8,26 @@
     :validation="validation"
     :interval="interval"
     :enable-cross="false"
-    :marks="true"
+    :disabled="disabled"
+    :marks="marks"
     :contained="true"
     :tooltip="'none'"
-    dot-size="28"
+    dot-size="24"
     :silent="true"
     :process-style="{ background: '#664AC9' }"
     :dot-style="{ background: '#664AC9' }"
     :rail-style="{ background: '#A3A3A6' }"
+    :label-style="{ color: '#F9F9FF' }"
     @change="handleInput"
   />
 </template>
 <script lang="ts" setup>
+import { toRef, computed, PropType } from 'vue';
 import VueSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/antd.css';
-import { toRef } from 'vue';
-import type { PropType } from 'vue';
 import type { FormKitFrameworkContext } from '@formkit/core';
+import { MarksProp } from 'vue-slider-component/typings/typings';
+import { formatNumber } from '@/lib/currency';
 
 const props = defineProps({
   context: {
@@ -45,15 +48,19 @@ const props = defineProps({
   },
   interval: {
     type: Number,
-    default: 5
+    default: 1
   },
   min: {
     type: Number,
-    default: undefined
+    default: 0
   },
   max: {
     type: Number,
-    default: undefined
+    default: 100
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   },
   validation: {
     type: String,
@@ -63,6 +70,23 @@ const props = defineProps({
 
 const context = toRef(props, 'context');
 const node = context.value.node;
+
+const marks = computed((): MarksProp => {
+  return {
+    [props.min?.toString()]: {
+      label: props.min?.toString(),
+      labelStyle: {
+        transform: 'translateX(0)'
+      }
+    },
+    [props.max?.toString()]: {
+      label: formatNumber(props.max),
+      labelStyle: {
+        transform: 'translateX(-100%)'
+      }
+    }
+  };
+});
 
 const handleInput = (value: number): void => {
   node.input(value);
@@ -74,7 +98,7 @@ const handleInput = (value: number): void => {
 }
 
 .vue-slider-rail {
-  @apply rounded bg-white;
+  @apply rounded;
 }
 
 .vue-slider-process {
@@ -99,7 +123,7 @@ const handleInput = (value: number): void => {
 }
 
 .vue-slider-dot-handle {
-  @apply h-full w-full cursor-pointer rounded-full border-4 border-offwhite-100 bg-ruby-700 shadow-lg;
+  @apply h-full w-full cursor-pointer rounded-full border-4 border-offwhite-100 bg-ruby-700 shadow-lg hover:!border-offwhite-100;
 }
 
 .vue-slider-dot-focus {

@@ -32,7 +32,7 @@ const optionsInput = {
 
 const range = {
   label:
-    'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700',
+    'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700 pb-2',
   input: 'form-range range-slider'
 };
 
