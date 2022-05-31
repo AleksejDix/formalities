@@ -4,7 +4,7 @@
     :min="min"
     :max="max"
     :help="help"
-    :value="modelValue"
+    :value="value"
     :validation="validation"
     :interval="interval"
     :enable-cross="false"
@@ -21,6 +21,11 @@
     @change="handleInput"
   />
 </template>
+<script lang="ts">
+export default {
+  inheritAttrs: false
+};
+</script>
 <script lang="ts" setup>
 import { toRef, computed, PropType } from 'vue';
 import VueSlider from 'vue-slider-component';
@@ -34,9 +39,9 @@ const props = defineProps({
     type: Object as PropType<FormKitFrameworkContext>,
     required: true
   },
-  modelValue: {
-    type: Number,
-    default: 0
+  value: {
+    type: [Number, Array],
+    required: true
   },
   label: {
     type: String,
@@ -97,25 +102,9 @@ const handleInput = (value: number): void => {
   @apply cursor-not-allowed;
 }
 
-.vue-slider-rail {
-  @apply rounded;
-}
-
-.vue-slider-process {
-  @apply rounded bg-ruby-700;
-}
-
-.vue-slider-mark {
-  z-index: 4;
-}
-
 .vue-slider-mark:first-child .vue-slider-mark-step,
 .vue-slider-mark:last-child .vue-slider-mark-step {
   @apply hidden;
-}
-
-.vue-slider-mark-step {
-  @apply h-4 w-px -translate-y-1/3 transform bg-denim-400;
 }
 
 .vue-slider-mark-label {
@@ -123,24 +112,10 @@ const handleInput = (value: number): void => {
 }
 
 .vue-slider-dot-handle {
-  @apply h-full w-full cursor-pointer rounded-full border-4 border-offwhite-100 bg-ruby-700 shadow-lg hover:!border-offwhite-100;
+  @apply cursor-pointer  border-4 shadow-lg !border-offwhite-100;
 }
 
-.vue-slider-dot-focus {
-  @apply rounded-full;
-}
 .vue-slider-dot-disabled {
   @apply cursor-not-allowed;
-}
-
-.vue-slider-dot-inner {
-  @apply min-h-6 whitespace-nowrap rounded border-ruby-700 bg-offwhite-100 px-4 py-2 text-center text-14;
-}
-
-.vue-slider-dot-tooltip-wrapper {
-  @apply opacity-0 transition-all;
-}
-.vue-slider-dot-show {
-  @apply opacity-100;
 }
 </style>

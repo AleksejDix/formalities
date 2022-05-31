@@ -28,9 +28,12 @@
       validation="required"
     />
     <FormInputTel label="Phone number" placeholder="Telephone input placeholder" v-model="phone" />
-    <FormInputRange label="Range" v-model="range" />
-    {{ range }}
-    <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
+    <div class="grid gap-8">
+      <FormInputRange label="Slider" v-model="slider" />
+      <FormInputRange label="Range" v-model="range" />
+      <GlobalOptions label="Toggle input" type="toggle" v-model="toggle" />
+    </div>
+
     <GlobalPill
       label="Pill input"
       :options="[
@@ -144,5 +147,6 @@ const toggle = ref(false);
 const pill = ref(['fr']);
 const autocomplete = ref('');
 const phone = ref('');
-const range = ref(0);
+const slider = ref(0);
+const range = ref([1, 7]);
 </script>
