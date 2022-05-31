@@ -31,7 +31,7 @@ import { toRef, computed, PropType } from 'vue';
 import VueSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/antd.css';
 import type { FormKitFrameworkContext } from '@formkit/core';
-import { MarksProp } from 'vue-slider-component/typings/typings';
+import type { MarksProp } from 'vue-slider-component/typings/typings';
 import { formatNumber } from '@/lib/currency';
 
 const props = defineProps({
