@@ -9,9 +9,6 @@
     @input="handleInput"
     @validate="handleValidate"
     :validation-visibility="validationVisibility"
-    :validation-messages="{
-      isPhoneValid: validationMessage
-    }"
   >
   </FormKit>
 </template>
