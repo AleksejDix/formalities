@@ -39,4 +39,24 @@ export const parameters: Parameters = {
       date: /Date$/,
     },
   },
+  backgrounds: {
+    default: 'dark',
+    values: [
+      {
+        name: 'light',
+        value: '#F9F9FF',
+      },
+      {
+        name: 'dark',
+        value: '#161627',
+      },
+    ],
+  },
+  themes: {
+    default: 'dark',
+    list: [
+      { name: 'light', class: '', color: '#F9F9FF' },
+      { name: 'dark', class: 'dark', color: '#161627' }
+    ]
+  },
 }
