@@ -32,7 +32,7 @@ import VueSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/antd.css';
 import type { FormKitFrameworkContext } from '@formkit/core';
 import type { MarksProp } from 'vue-slider-component/typings/typings';
-import { formatNumber } from '@/lib/currency';
+import { formatNumber } from '../../../lib/currency';
 
 const props = defineProps({
   context: {
@@ -41,7 +41,7 @@ const props = defineProps({
   },
   value: {
     type: [Number, Array],
-    required: true
+    default: 0
   },
   label: {
     type: String,

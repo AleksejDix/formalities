@@ -82,7 +82,7 @@
 import { toRef } from 'vue';
 import type { PropType } from 'vue';
 import type { FormKitFrameworkContext } from '@formkit/core';
-import GlobalButton from '@/components/GlobalButton/GlobalButton.vue';
+import GlobalButton from '../../GlobalButton/GlobalButton.vue';
 
 const props = defineProps({
   context: {

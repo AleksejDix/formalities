@@ -2,17 +2,32 @@ import { Parameters, app } from '@storybook/vue3';
 
 
 import '../src/assets/index.css';
-import { plugin, defaultConfig } from '@formkit/vue';
+import { plugin, defaultConfig, createInput } from '@formkit/vue';
 import { generateClasses } from '@formkit/tailwindcss';
 
 import pctTheme from '../src/assets/property-captain-theme.js';
+import { de, fr, en, it } from '@formkit/i18n';
+import InputCounter from '../src/components/CustomInputs/InputCounter/InputCounter.vue';
+import InputAutocomplete from '../src/components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
+import InputTel from '../src/components/CustomInputs/InputTel/InputTel.vue';
+import InputRange from '../src/components/CustomInputs/InputRange/InputRange.vue';
+import messages from '../src/formkit.config';
 
 app.use(
   plugin,
   defaultConfig({
+    locales: { de, fr, it, en },
+    locale: 'en',
     config: {
       classes: generateClasses(pctTheme)
     },
+    inputs: {
+      counter: createInput(InputCounter),
+      autocomplete: createInput(InputAutocomplete),
+      tel: createInput(InputTel),
+      range: createInput(InputRange)
+    },
+    messages: messages
   })
 );
 

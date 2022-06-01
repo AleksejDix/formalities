@@ -1,17 +1,11 @@
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Input',
+  title: 'Range',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     label: {
-      name: 'label',
-      type: { name: 'string', required: false },
-      description: 'demo description',
-      table: {
-        type: { summary: 'string' }
-      },
       control: {
-        type: 'text'
+        type: 'range'
       }
     }
   }
@@ -31,9 +25,9 @@ const Template = (args) => ({
 export const Text = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Text.args = {
-  name: 'text',
-  label: 'Username',
-  autocomplete: 'username',
-  validation: 'required',
-  type: 'text'
+  label: 'Range',
+  min: '0',
+  max: '100',
+  name: 'range',
+  type: 'range'
 };
