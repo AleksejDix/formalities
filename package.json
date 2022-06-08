@@ -1,6 +1,6 @@
 {
   "name": "@ascarix/formalities",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/formalities.umd.js",
   "module": "./dist/formalities.es.js",
   "typings": "./dist/formalities.d.ts",
@@ -11,7 +11,7 @@
     }
   },
   "files":[
-	"dist"
+	  "dist"
   ],
   "scripts": {
     "dev": "vite",
@@ -25,13 +25,6 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "@formkit/vue": "^1.0.0-beta.6",
-    "lodash-es": "4.17.21",
-    "vue": "^3.2.33",
-    "vue-slider-component": "^4.0.0-beta.4",
-    "vue-tel-input": "^6.0.0-beta.7"
   },
   "peerDependencies": {
     "@formkit/vue": "^1.0.0-beta.6",
@@ -77,6 +70,7 @@
     "vite": "^2.9.5",
     "vite-dts": "^1.0.4",
     "vitest": "^0.9.3",
+    "vue": "^3.2.33",
     "vue-dts-generator": "^0.1.6",
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.34.10"
