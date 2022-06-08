@@ -19,15 +19,15 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<FormKit v-bind="args" />'
+  template: '<FormKit type="range" v-bind="args" />'
 });
 
 export const Text = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Text.args = {
   label: 'Range',
-  min: '0',
-  max: '100',
-  name: 'range',
-  type: 'range'
+  min: 0,
+  max: 100,
+  step: 10,
+  name: 'range'
 };

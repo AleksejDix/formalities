@@ -102,8 +102,8 @@ const handleInput = (value: number): void => {
   @apply cursor-not-allowed;
 }
 
-.vue-slider-mark:first-child .vue-slider-mark-step,
-.vue-slider-mark:last-child .vue-slider-mark-step {
+.vue-slider-mark:first-of-type .vue-slider-mark-step,
+.vue-slider-mark:last-of-type .vue-slider-mark-step {
   @apply hidden;
 }
 

@@ -1,9 +1,7 @@
 <template>
   <FormKit
     type="range"
-    v-bind="$attrs"
     :validation="validation"
-    :disabled="disabled"
     :label="label"
     :help="help"
     :min="min"
@@ -11,19 +9,15 @@
     :interval="interval"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target)"
+    v-bind="$attrs"
   >
   </FormKit>
 </template>
-<script lang="ts">
-export default {
-  inheritAttrs: false
-};
-</script>
+
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   modelValue: {
-    type: [Number, Array],
-    required: null
+    type: [Number, Array]
   },
   label: {
     type: String,
@@ -43,11 +37,7 @@ const props = defineProps({
   },
   max: {
     type: Number,
-    default: 100
-  },
-  disabled: {
-    type: Boolean,
-    default: false
+    required: true
   },
   validation: {
     type: String,

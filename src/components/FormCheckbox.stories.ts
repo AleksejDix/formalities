@@ -1,6 +1,5 @@
-import GlobalOptions from './GlobalOptions.vue';
 export default {
-  title: 'Options',
+  title: 'Form/Input/Checkbox',
   argTypes: {
     control: {
       type: 'checkbox'
@@ -9,19 +8,16 @@ export default {
 };
 
 const Template = (args) => ({
-  components: {
-    GlobalOptions
-  },
   setup() {
     return { args };
   },
-  template: '<GlobalOptions v-bind="args" />'
+  template: '<FormKit v-bind="args" />'
 });
 
-export const Text = Template.bind({});
-Text.args = {
-  name: 'options',
-  label: 'Global Options',
+export const Component = Template.bind({});
+Component.args = {
+  name: 'checkbox',
+  label: 'checkbox',
   type: 'checkbox',
   options: [
     { label: 'France', value: 'fr' },

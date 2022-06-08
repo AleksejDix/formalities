@@ -1,6 +1,6 @@
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Select',
+  title: 'Form/Select',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     label: {
@@ -11,9 +11,6 @@ export default {
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'Hello' }
-      },
-      control: {
-        type: 'select'
       }
     }
   }

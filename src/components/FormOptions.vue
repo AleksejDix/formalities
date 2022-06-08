@@ -33,7 +33,9 @@ interface ISelectOption {
   label: string;
   value: string | number;
 }
+
 const emit = defineEmits(['update:modelValue']);
+
 const props = defineProps({
   type: {
     type: String as PropType<'checkbox' | 'radio' | 'toggle'>,
@@ -44,8 +46,8 @@ const props = defineProps({
     required: true
   },
   options: {
-    type: Array as PropType<ISelectOption[]>,
-    default: () => []
+    type: Array as PropType<ISelectOption[] | null>,
+    default: null
   },
   label: {
     type: String,

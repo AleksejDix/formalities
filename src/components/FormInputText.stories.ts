@@ -1,6 +1,6 @@
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Input',
+  title: 'Form/Input/Text',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     label: {
