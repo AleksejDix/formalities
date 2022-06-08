@@ -1,0 +1,41 @@
+
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: NodeTool@0
+    displayName: Use Node 16.13.0
+    inputs:
+      versionSpec: 16.13.0
+
+  - task: Yarn@3
+    displayName: yarn install
+    inputs:
+      arguments: 'install'
+
+  - task: Yarn@3
+    displayName: yarn build
+    inputs:
+      arguments: 'build'
+
+  - task: Yarn@3
+    displayName: yarn build-storybook
+    inputs:
+      arguments: 'build-storybook'
+
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Artifact: storybook'
+    inputs:
+      targetPath: storybook-static
+      ArtifactName: storybook
+
+  - task: Yarn@3
+    displayName: 'yarn publish'
+    inputs:
+      arguments: 'publish'
+      customRegistry: 'useFeed'
+      customFeed: '872bf0a5-ea37-4af4-8b65-340bac6f0bec'
