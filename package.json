@@ -1,5 +1,5 @@
 {
-  "name": "formalities",
+  "name": "@ascarix/formalities",
   "version": "0.0.1",
   "main": "./dist/formalities.umd.js",
   "module": "./dist/formalities.es.js",
@@ -10,6 +10,9 @@
       "require": "./dist/formalities.umd.js"
     }
   },
+  "files":[
+	"dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
