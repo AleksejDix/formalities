@@ -22,7 +22,6 @@
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/dist/vue-tel-input.css';
 import { ref, watch, toRef } from 'vue';
-import debounce from 'lodash-es/debounce';
 import type { PropType } from 'vue';
 import type { FormKitFrameworkContext } from '@formkit/core';
 
@@ -46,17 +45,17 @@ const node = context.value.node;
 const isPristine = ref(true);
 const phone = ref('');
 
-const handleInput = debounce((event: Event): void => {
+const handleInput = (event: Event): void => {
   if (isPristine.value) {
     isPristine.value = false;
   } else {
     node.input(event.target.value);
   }
-}, 100);
+};
 
-const handleValidate = debounce((event: Event): void => {
+const handleValidate = (event: Event): void => {
   context.value.attrs.onValidate(event);
-}, 100);
+};
 
 watch(
   () => props.modelValue,
