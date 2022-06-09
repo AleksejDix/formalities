@@ -1,6 +1,6 @@
 {
   "name": "@ascarix/formalities",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./dist/formalities.umd.js",
   "module": "./dist/formalities.es.js",
   "typings": "./dist/formalities.d.ts",
@@ -33,7 +33,9 @@
     "@formkit/vue": "^1.0.0-beta.8",
     "vue": "^3.2.37",
     "vue-slider-component": "^4.0.0-beta.4",
-    "vue-tel-input": "^6.0.0-beta.7"
+    "vue-tel-input": "^6.0.0-beta.7",
+    "@tailwindcss/forms": "^0.5.0",
+    "@formkit/tailwindcss": "^1.0.0-beta.6"
   },
   "peerDependencies": {
     "@formkit/vue": "^1.0.0-beta.8",
@@ -46,7 +48,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
-    "@formkit/tailwindcss": "^1.0.0-beta.6",
     "@rushstack/eslint-patch": "^1.1.0",
     "@storybook/addon-actions": "^6.5.7",
     "@storybook/addon-essentials": "^6.5.7",
@@ -55,7 +56,6 @@
     "@storybook/builder-vite": "^0.1.36",
     "@storybook/testing-library": "^0.0.11",
     "@storybook/vue3": "^6.5.7",
-    "@tailwindcss/forms": "^0.5.0",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.27",
     "@vitejs/plugin-vue": "^2.3.1",
