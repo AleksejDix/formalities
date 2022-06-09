@@ -7,8 +7,7 @@ const global = {
   message: 'text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700',
   input: 'text-16 placeholder-denim-700 formkit-invalid:placeholder-ruby-700',
   help: 'text-14 text-denim-400 pt-1',
-  legend: 'text-16 dark:text-offwhite-100 font-medium',
-  primary: 'border-velvet-600 bg-velvet-600 text-offwhite-100 outline-velvet-600'
+  legend: 'text-16 dark:text-offwhite-100 font-medium'
 };
 
 const formInput = {
@@ -21,6 +20,15 @@ const formInput = {
 const button = {
   input:
     'global-button border flex transform text-center font-medium transition ease-in dark:text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400 items-center space-x-2'
+};
+
+const customButton = {
+  main: 'border flex transform text-center font-medium transition ease-in dark:text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400 items-center space-x-2',
+  primary: 'border-velvet-600 bg-velvet-600 text-offwhite-100 outline-velvet-600 hover:border-velvet-800 hover:bg-velvet-800 focus:bg-velvet-800',
+  secondary: 'border-denim-900 bg-offwhite-100 text-denim-900 outline-velvet-900 dark:border-offwhite-100 dark:bg-denim-800 dark:text-offwhite-100 hover:border-velvet-800 hover:bg-velvet-800 hover:text-offwhite-100 dark:hover:text-velvet-600 dark:hover:text-offwhite-100 focus:bg-velvet-800 focus:text-offwhite-100',
+  critical: 'border-ruby-700 bg-ruby-700 text-offwhite-100 outline-ruby-900 hover:border-ruby-900 hover:bg-ruby-900 focus:bg-ruby-900',
+  base: 'py-3 px-6 text-16',
+  large: 'py-3 px-6 text-20'
 };
 
 const optionsInput = {
@@ -81,5 +89,6 @@ export default {
   button,
   submit: button,
   counter: counter,
-  autocomplete: autocomplete
+  autocomplete: autocomplete,
+  customButton: customButton
 };

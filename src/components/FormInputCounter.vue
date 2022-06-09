@@ -7,9 +7,10 @@
       </div>
     </label>
     <div class="flex items-center justify-between">
-      <GlobalButton
+      <FormKit
+        type="customButton"
+        buttonType="icon"
         variant="secondary"
-        type="icon"
         aria-label="decrease value"
         :aria-labelledby="`title-label-filter-stepper-${context.id}`"
         :disabled="context.value <= context.attrs.minValue"
@@ -31,7 +32,7 @@
             />
           </svg>
         </template>
-      </GlobalButton>
+      </FormKit>
       <input
         type="hidden"
         @input="context.handlers.DOMInput"
@@ -49,8 +50,9 @@
           context.attrs.hiddenLabel
         }}</span>
       </div>
-      <GlobalButton
-        type="icon"
+      <FormKit
+        type="customButton"
+        buttonType="icon"
         variant="secondary"
         aria-label="increase value"
         :aria-labelledby="`title-label-filter-stepper-${context.id}`"
@@ -73,7 +75,7 @@
             />
           </svg>
         </template>
-      </GlobalButton>
+      </FormKit>
     </div>
   </section>
 </template>
@@ -82,7 +84,6 @@
 import { toRef } from 'vue';
 import type { PropType } from 'vue';
 import type { FormKitFrameworkContext } from '@formkit/core';
-import GlobalButton from '../../GlobalButton/GlobalButton.vue';
 
 const props = defineProps({
   context: {
