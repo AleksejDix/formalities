@@ -5,9 +5,10 @@ const global = {
   label: 'inline-block pb-1 text-14 font-medium',
   messages: 'pt-1',
   message: 'text-14 text-denim-400 font-medium formkit-invalid:text-ruby-700',
-  input: 'text-16 placeholder-denim-700 formkit-invalid:placeholder-ruby-700 ',
+  input: 'text-16 placeholder-denim-700 formkit-invalid:placeholder-ruby-700',
   help: 'text-14 text-denim-400 pt-1',
-  legend: 'text-16 dark:text-offwhite-100 font-medium'
+  legend: 'text-16 dark:text-offwhite-100 font-medium',
+  primary: 'border-velvet-600 bg-velvet-600 text-offwhite-100 outline-velvet-600'
 };
 
 const formInput = {
