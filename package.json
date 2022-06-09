@@ -33,7 +33,9 @@
     "@formkit/vue": "^1.0.0-beta.8",
     "vue": "^3.2.37",
     "vue-slider-component": "^4.0.0-beta.4",
-    "vue-tel-input": "^6.0.0-beta.7"
+    "vue-tel-input": "^6.0.0-beta.7",
+    "@formkit/tailwindcss": "^1.0.0-beta.6",
+    "@tailwindcss/forms": "^0.5.0"
   },
   "peerDependencies": {
     "@formkit/vue": "^1.0.0-beta.8",
