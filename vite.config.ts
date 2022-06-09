@@ -16,12 +16,14 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
+      formats: ['es', 'cjs'],
       name: 'formalities'
     },
+    minify: false,
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue'],
+      external: ['vue', 'vue-slider-component', 'vue-tel-input', '@formkit/vue', 'lodash-es'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
