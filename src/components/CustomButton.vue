@@ -1,7 +1,6 @@
 <template>
   <button
     v-bind="context.attrs"
-    @click="$emit('click', $event)"
     :disabled="(context.disabled as boolean)"
     :class="
       [

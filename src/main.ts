@@ -12,7 +12,6 @@ import messages from './formkit.config';
 import { de, fr, en, it } from '@formkit/i18n';
 
 import pctTheme from './assets/property-captain-theme.js';
-import CustomButton from '../src/components/CustomButton.vue';
 
 const app = createApp(App);
 
@@ -28,8 +27,7 @@ app.use(
       // counter: createInput(FormInputCounter),
       // autocomplete: createInput(InputAutocomplete),
       // tel: createInput(InputTel),
-      // range: createInput(InputRange),
-      button: createInput(CustomButton)
+      // range: createInput(InputRange)
     },
     messages: messages
   })
