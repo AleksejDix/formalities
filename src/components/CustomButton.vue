@@ -25,5 +25,4 @@ const props = defineProps({
   }
 });
 const context = toRef(props, 'context');
-const node = context.value.node;
 </script>

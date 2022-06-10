@@ -18,7 +18,8 @@ const formInput = {
 };
 
 const button = {
-  input: 'border flex transform text-center font-medium transition ease-in dark:text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400 items-center space-x-2',
+  input:
+    'border flex transform text-center font-medium transition ease-in dark:text-offwhite-100 rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline active:scale-90 active:transition active:ease-out formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-400 formkit-disabled:!bg-denim-400 formkit-disabled:text-denim-500 formkit-disabled:hover:!border-denim-400 formkit-disabled:dark:border-denim-400 items-center space-x-2',
   primary:
     'border-velvet-600 bg-velvet-600 text-offwhite-100 outline-velvet-600 hover:border-velvet-800 hover:bg-velvet-800 focus:bg-velvet-800',
   secondary:
@@ -29,12 +30,26 @@ const button = {
   large: 'py-3 px-6 text-20'
 };
 
-const optionsInput = {
-  wrapper: 'global-options-wrapper',
-  label: 'global-options-label dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
-  input: 'global-options-input',
-  inner: 'global-options-inner',
-  decorator: 'global-options-decorator'
+// const optionsInput = {
+//   wrapper: 'global-options-wrapper',
+//   label: 'global-options-label dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
+//   input: 'global-options-input',
+//   inner: 'global-options-inner',
+//   decorator: 'global-options-decorator'
+// };
+
+const checkbox = {
+  wrapper: 'flex items-center space-x-4',
+  label: 'dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
+  input:
+    'form-checkbox rounded cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-offwhite-100 checked:border-velvet-800 checked:focus:bg-velvet-600 checked:focus:border-offwhite-100 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-800 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700'
+};
+
+const radio = {
+  wrapper: 'flex items-center space-x-4',
+  label: 'dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
+  input:
+    'form-radio rounded-full cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-velvet-600 checked:border-velvet-600 checked:focus:bg-velvet-600 checked:focus:border-velvet-600 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-600 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700  formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700'
 };
 
 const range = {
@@ -66,8 +81,8 @@ const autocomplete = {
 
 export default {
   global,
-  radio: optionsInput,
-  checkbox: optionsInput,
+  radio: radio,
+  checkbox: checkbox,
   textarea: formInput,
   text: formInput,
   number: formInput,
