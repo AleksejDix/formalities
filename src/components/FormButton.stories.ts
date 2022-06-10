@@ -2,7 +2,7 @@ export default {
   title: 'Form/Button',
   argTypes: {
     control: {
-      type: 'customButton'
+      type: 'button'
     }
   }
 };

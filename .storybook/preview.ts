@@ -1,36 +1,11 @@
 import { Parameters, app } from '@storybook/vue3';
-
-
-import '../src/assets/index.css';
-import { plugin, defaultConfig, createInput } from '@formkit/vue';
-import { generateClasses } from '@formkit/tailwindcss';
-
-import pctTheme from '../src/assets/property-captain-theme.js';
-import { de, fr, en, it } from '@formkit/i18n';
-import FormInputCounter from '../src/components/FormInputCounter.vue';
-// import InputAutocomplete from '../src/components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
-// import InputTel from '../src/components/CustomInputs/InputTel/InputTel.vue';
-// import InputRange from '../src/components/CustomInputs/InputRange/InputRange.vue';
-import CustomButton from '../src/components/CustomButton.vue';
-import messages from '../src/formkit.config';
+import '../src/assets/index.css'
+import { plugin, defaultConfig } from '@formkit/vue';
+import formkitConfig from '../src/formkit.config';
 
 app.use(
   plugin,
-  defaultConfig({
-    locales: { de, fr, it, en },
-    locale: 'en',
-    config: {
-      classes: generateClasses(pctTheme)
-    },
-    inputs: {
-      // counter: createInput(FormInputCounter),
-      // autocomplete: createInput(InputAutocomplete),
-      // tel: createInput(InputTel),
-      // range: createInput(InputRange),
-      button: createInput(CustomButton)
-    },
-    messages: messages
-  })
+  defaultConfig(formkitConfig)
 );
 
 export const parameters: Parameters = {

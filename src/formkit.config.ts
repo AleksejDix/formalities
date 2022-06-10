@@ -1,3 +1,9 @@
+import { createInput, type DefaultConfigOptions } from '@formkit/vue';
+import { de, fr, en, it } from '@formkit/i18n';
+import { generateClasses } from '@formkit/tailwindcss';
+import pctTheme from './assets/property-captain-theme.js';
+import FormButton from './components/FormButton.vue';
+
 const messages = {
   en: {
     validation: {
@@ -113,4 +119,15 @@ const messages = {
   }
 };
 
-export default messages;
+const formkitConfig: DefaultConfigOptions = {
+  locales: { de, fr, it, en },
+  locale: 'en',
+  config: {
+    classes: generateClasses(pctTheme)
+  },
+  inputs: {
+    button: createInput(FormButton)
+  },
+  messages: messages
+};
+export default formkitConfig;
