@@ -6,8 +6,6 @@ import { de, fr, en, it } from '@formkit/i18n';
 import pctTheme from './assets/property-captain-theme.js';
 
 export { default as pctFormkitTheme } from '@/assets/property-captain-theme';
-export { default as FormButton } from '@/components/FormButton.vue';
-import FormButton from '@/components/FormButton.vue'
 
 export function install(app: App) {
   app.use(
@@ -21,5 +19,4 @@ export function install(app: App) {
       messages: messages
     })
   );
-  app.component('FormButton', FormButton)
 }
