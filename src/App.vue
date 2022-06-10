@@ -1,6 +1,6 @@
 <template>
   <h1>Hallo</h1>
-  <FormKit @click="asdf" type="button" variant="primary" size="base">My button</FormKit>
+  <FormKit @click="asdf" aria-label="adf" type="button">My button</FormKit>
 </template>
 
 <script setup lang="ts">

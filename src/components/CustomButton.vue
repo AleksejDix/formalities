@@ -1,18 +1,19 @@
 <template>
   <button
-    v-bind="$attrs"
+    v-bind="context.attrs"
+    @click="$emit('click', $event)"
+    :disabled="(context.disabled as boolean)"
     :class="
       [
         context.classes.input,
-        context.classes[context.attrs.size],
-        context.classes[context.attrs.variant]
+        context.classes[context.attrs.size || 'base'],
+        context.classes[context.attrs.variant || 'primary']
       ].join(' ')
     "
   >
     {{ context.slots.default()[0].children }}
   </button>
 </template>
-
 <script lang="ts" setup>
 import { toRef } from 'vue';
 import type { PropType } from 'vue';
@@ -25,5 +26,6 @@ const props = defineProps({
   }
 });
 const context = toRef(props, 'context');
-const node = context.value.node;
+
+context.value.disabled = context.value.disabled === '' || (context.value.disabled as boolean);
 </script>

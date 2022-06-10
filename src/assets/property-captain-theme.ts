@@ -26,7 +26,8 @@ const button = {
   critical:
     'border-ruby-700 bg-ruby-700 text-offwhite-100 outline-ruby-900 hover:border-ruby-900 hover:bg-ruby-900 focus:bg-ruby-900',
   base: 'py-3 px-6 text-16',
-  large: 'py-3 px-6 text-20'
+  large: 'py-3 px-6 text-20',
+  icon: 'py-3 px-3 text-16'
 };
 
 const optionsInput = {
