@@ -11,7 +11,7 @@ import FormInputCounter from '../src/components/FormInputCounter.vue';
 // import InputAutocomplete from '../src/components/CustomInputs/InputAutocomplete/InputAutocomplete.vue';
 // import InputTel from '../src/components/CustomInputs/InputTel/InputTel.vue';
 // import InputRange from '../src/components/CustomInputs/InputRange/InputRange.vue';
-import CustomButtonScheme from '../src/components/CustomButtonScheme';
+import CustomButton from '../src/components/CustomButton.vue';
 import messages from '../src/formkit.config';
 
 app.use(
@@ -27,7 +27,7 @@ app.use(
       // autocomplete: createInput(InputAutocomplete),
       // tel: createInput(InputTel),
       // range: createInput(InputRange),
-      customButton: CustomButtonScheme
+      button: createInput(CustomButton)
     },
     messages: messages
   })

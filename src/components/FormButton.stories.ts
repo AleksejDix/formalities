@@ -11,7 +11,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: '<FormKit v-bind="args">Button</FormKit>'
+  template: `<FormKit v-bind="args">My button</FormKit>`
 });
 
 const Template2 = (args) => ({
@@ -33,21 +33,21 @@ export const Secondary = Template2.bind({});
 export const IconCritical = Template3.bind({});
 Primary.args = {
   name: 'button',
-  type: 'customButton',
+  type: 'button',
   buttonType: 'button',
   variant: 'primary',
   size: 'base'
 };
 Secondary.args = {
   name: 'button2',
-  type: 'customButton',
+  type: 'button',
   buttonType: 'button',
   variant: 'secondary',
   size: 'large'
 };
 IconCritical.args = {
   name: 'button3',
-  type: 'customButton',
+  type: 'button',
   buttonType: 'icon',
   variant: 'critical',
   size: 'base'
