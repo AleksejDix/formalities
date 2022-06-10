@@ -30,8 +30,6 @@ export default defineConfig({
         'vue-slider-component',
         'vue-tel-input',
         '@formkit/vue',
-        '@tailwindcss/forms',
-        '@formkit/tailwindcss',
         'lodash-es'
       ],
       output: {
