@@ -53,6 +53,19 @@ const radio = {
     'form-radio rounded-full cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-velvet-600 checked:border-velvet-600 checked:focus:bg-velvet-600 checked:focus:border-velvet-600 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-600 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700  formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700'
 };
 
+const toggle = {
+  outer: 'flex h-3.5 w-9 cursor-pointer items-center rounded-full py-1 duration-300 ease-in-out',
+  decorator:
+    'cursor-pointer h-5 w-5 shadow transform rounded-full bg-offwhite-100 duration-300 ease-in-out',
+  wrapper: 'flex items-center space-x-4',
+  label: 'dark:text-offwhite-100 block text-16 pt-1',
+  input: 'sr-only',
+  inner:
+    'flex h-6 w-11 p-0.5 cursor-pointer items-center rounded-full py-1 duration-300 ease-in-out',
+  checked: 'bg-velvet-600',
+  unchecked: 'bg-denim-400'
+};
+
 const range = {
   label:
     'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700 pb-2',
@@ -84,6 +97,7 @@ export default {
   global,
   radio: radio,
   checkbox: checkbox,
+  toggle: toggle,
   textarea: formInput,
   text: formInput,
   number: formInput,

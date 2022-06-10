@@ -1,5 +1,5 @@
 export default {
-  title: 'Form/Input/Checkbox|Radio',
+  title: 'Form/Input/Checkbox|Radio|Toggle',
   argTypes: {
     control: {
       type: 'checkbox'
@@ -14,15 +14,9 @@ const Template = (args) => ({
   template: '<FormKit v-bind="args" />'
 });
 
-const Template2 = (args) => ({
-  setup() {
-    return { args };
-  },
-  template: '<FormKit v-bind="args" />'
-});
-
-export const Radio = Template2.bind({})
 export const Checkbox = Template.bind({});
+export const Radio = Template.bind({});
+export const Toggle = Template.bind({});
 Checkbox.args = {
   name: 'checkbox',
   label: 'checkbox',
@@ -35,7 +29,6 @@ Checkbox.args = {
     { label: 'Greece', value: 'gr' }
   ]
 };
-
 Radio.args = {
   name: 'radio',
   label: 'radio',
@@ -47,4 +40,9 @@ Radio.args = {
     { label: 'Italy', value: 'ie' },
     { label: 'Greece', value: 'gr' }
   ]
+};
+Toggle.args = {
+  name: 'toggle',
+  label: 'toggle',
+  type: 'toggle',
 };

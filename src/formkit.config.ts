@@ -3,7 +3,7 @@ import { de, fr, en, it } from '@formkit/i18n';
 import { generateClasses } from '@formkit/tailwindcss';
 import pctTheme from './assets/property-captain-theme.js';
 import FormButton from './components/FormButton.vue';
-
+import FormToggle from './components/FormToggle.vue';
 const messages = {
   en: {
     validation: {
@@ -126,7 +126,8 @@ const formkitConfig: DefaultConfigOptions = {
     classes: generateClasses(pctTheme)
   },
   inputs: {
-    button: createInput(FormButton)
+    button: createInput(FormButton),
+    toggle: createInput(FormToggle)
   },
   messages: messages
 };
