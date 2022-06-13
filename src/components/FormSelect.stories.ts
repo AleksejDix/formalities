@@ -27,9 +27,9 @@ const Template = (args) => ({
   template: '<FormKit v-bind="args" />'
 });
 
-export const Text = Template.bind({});
+export const Select = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Text.args = {
+Select.args = {
   name: 'select',
   label: 'Select',
   type: 'select',

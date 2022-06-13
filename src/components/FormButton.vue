@@ -2,6 +2,7 @@
   <button
     v-bind="context.attrs"
     :disabled="(context.disabled as boolean)"
+    :data-disabled="(context.disabled as boolean) ? true : undefined"
     :class="
       [
         context.classes.input,
@@ -10,7 +11,7 @@
       ].join(' ')
     "
   >
-    {{ context.slots.default()[0].children }}
+    <slot />
   </button>
 </template>
 <script lang="ts" setup>

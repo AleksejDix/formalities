@@ -1,6 +1,6 @@
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Form/Input/Text',
+  title: 'Form/Input',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     label: {
@@ -17,23 +17,46 @@ export default {
   }
 };
 
-// More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return { args };
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: '<FormKit v-bind="args" />'
 });
 
 export const Text = Template.bind({});
+export const Number = Template.bind({});
+export const Email = Template.bind({});
+export const Url = Template.bind({});
+export const Textarea = Template.bind({});
+
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Text.args = {
   name: 'text',
-  label: 'Username',
+  label: 'Text',
   autocomplete: 'username',
   validation: 'required',
   type: 'text'
+};
+Number.args = {
+  name: 'number',
+  label: 'Number',
+  type: 'number'
+};
+Email.args = {
+  name: 'email',
+  label: 'Email',
+  autocomplete: 'email',
+  validation: 'required|email',
+  type: 'email'
+};
+Url.args = {
+  name: 'url',
+  label: 'Url',
+  type: 'url'
+};
+Textarea.args = {
+  name: 'textarea',
+  label: 'Textarea',
+  type: 'textarea'
 };

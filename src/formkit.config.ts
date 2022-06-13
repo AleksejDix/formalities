@@ -129,7 +129,10 @@ const formkitConfig: DefaultConfigOptions = {
     classes: generateClasses(pctTheme)
   },
   inputs: {
-    button: createInput(FormButton),
+    button: {
+      type: 'input',
+      component: FormButton
+    },
     toggle: createInput(FormToggle),
     pill: {
       type: 'input',
