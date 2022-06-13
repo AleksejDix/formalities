@@ -20,24 +20,24 @@ const Template = (args) => ({
     <GlobalAlert v-bind="args">Alert</GlobalAlert>`
 });
 
-export const SuccessAlert = Template.bind({});
+export const Success = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-SuccessAlert.args = {
+Success.args = {
   variant: 'success'
 };
 
-export const DefaultBadge = Template.bind({});
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-DefaultBadge.args = {
+Default.args = {
   variant: 'error'
 };
 
-export const InfoBadge = Template.bind({});
-InfoBadge.args = {
+export const Info = Template.bind({});
+Info.args = {
   variant: 'info'
 };
 
-export const WarningBadge = Template.bind({});
-WarningBadge.args = {
+export const Warning = Template.bind({});
+Warning.args = {
   variant: 'warning'
 };

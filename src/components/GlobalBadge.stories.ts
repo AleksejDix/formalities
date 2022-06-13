@@ -20,12 +20,12 @@ const Template = (args) => ({
     <GlobalBadge v-bind="args">badge</GlobalBadge>`
 });
 
-export const GradientBadge = Template.bind({});
+export const Gradient = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-GradientBadge.args = {
+Gradient.args = {
   variant: 'gradient'
 };
 
-export const DefaultBadge = Template.bind({});
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-DefaultBadge.args = {};
+Default.args = {};
