@@ -8,7 +8,7 @@
       :class="[context.classes.input]"
       :checked="context._value"
       v-bind="context.attrs"
-      @input="context.handlers.DOMInput"
+      @change="handleChange"
     />
   </label>
 </template>
@@ -25,5 +25,10 @@ const props = defineProps({
   }
 });
 const context = toRef(props, 'context');
+const node = context.value.node;
+
+function handleChange(event: Event) {
+  const value = (event.target as HTMLInputElement).checked;
+  node.input(value);
+}
 </script>
-<style scoped></style>

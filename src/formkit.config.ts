@@ -4,6 +4,7 @@ import { generateClasses } from '@formkit/tailwindcss';
 import pctTheme from './assets/property-captain-theme.js';
 import FormButton from './components/FormButton.vue';
 import FormToggle from './components/FormToggle.vue';
+import FormInputPill from './components/FormInputPill.vue';
 const messages = {
   en: {
     validation: {
@@ -127,7 +128,11 @@ const formkitConfig: DefaultConfigOptions = {
   },
   inputs: {
     button: createInput(FormButton),
-    toggle: createInput(FormToggle)
+    toggle: createInput(FormToggle),
+    pill: {
+      type: 'input',
+      component: FormInputPill
+    }
   },
   messages: messages
 };

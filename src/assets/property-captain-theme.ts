@@ -66,6 +66,16 @@ const toggle = {
   unchecked: 'bg-denim-400'
 };
 
+const pill = {
+  wrapper:
+    'relative inline-flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out',
+  decorator:
+    'absolute inset-0 cursor-pointer whitespace-nowrap rounded-full bg-offwhite-100  ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:ring-white dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-velvet-600 peer-active:scale-90 peer-active:transition peer-active:duration-200 peer-active:ease-out peer-checked:border-offwhite-100 peer-checked:bg-velvet-600 peer-checked:ring-velvet-600',
+  input: 'sr-only z-30 peer',
+  label:
+    'z-10 cursor-pointer dark:formkit-invalid:text-offwhite-100 formkit-invalid:text-denim-900 px-4 py-3 pb-3 peer-checked:dark:text-offwhite-100 peer-checked:text-offwhite-100 dark:text-offwhite-100 block w-full flex-1 text-16'
+};
+
 const range = {
   label:
     'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700 pb-2',
@@ -98,6 +108,7 @@ export default {
   radio: radio,
   checkbox: checkbox,
   toggle: toggle,
+  pill: pill,
   textarea: formInput,
   text: formInput,
   number: formInput,

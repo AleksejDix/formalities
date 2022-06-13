@@ -1,121 +1,33 @@
 <template>
-  <FormKit
-    :type="type"
-    :label="label"
-    :options="options"
-    :validation="validation"
-    :disabled="disabled"
-    :wrapper-class="{
-      pill: true,
-      disabled: disabled
-    }"
-    input-class="pill"
-    :label-class="{
-      pill: true,
-      disabled: disabled
-    }"
-    :decorator-class="{
-      pill: true,
-      disabled: disabled
-    }"
-    @input="handleInput"
-    @node="setNode"
-    :validation-visibility="validationVisibility"
-  >
-  </FormKit>
+  <label :class="context.classes.wrapper">
+    <input
+      type="checkbox"
+      :class="[context.classes.input]"
+      :value="context._value"
+      v-bind="context.attrs"
+      @change="handleChange"
+    />
+    <span :class="context.classes.decorator"> </span>
+    <div :class="context.classes.label">{{ context.label  }}</div>
+  </label>
 </template>
-<script lang="ts">
-export default {
-  inheritAttrs: false
-};
-</script>
 
 <script lang="ts" setup>
-import { PropType, nextTick } from 'vue';
-
-interface ISelectOption {
-  label: string;
-  value: string | number;
-}
+import { toRef } from 'vue';
+import type { PropType } from 'vue';
+import type { FormKitFrameworkContext } from '@formkit/core';
 
 const props = defineProps({
-  type: {
-    type: String as PropType<'checkbox' | 'radio'>,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext>,
     required: true
-  },
-  modelValue: {
-    type: [String, Number, Boolean, Array],
-    required: true
-  },
-  options: {
-    type: Array as PropType<ISelectOption[]>,
-    default: () => []
-  },
-  label: {
-    type: String,
-    required: true
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  },
-  validation: {
-    type: String,
-    default: ''
-  },
-  validationVisibility: {
-    type: String,
-    default: 'blur'
   }
 });
+const context = toRef(props, 'context');
+const node = context.value.node;
 
-const emit = defineEmits(['update:modelValue']);
-
-const setNode = (node) => {
-  nextTick(() => node.input(props.modelValue));
-};
-
-function handleInput(event: Event) {
-  emit('update:modelValue', event);
+function handleChange(event: Event) {
+  const value = (event.target as HTMLInputElement).checked;
+  node.input(value);
 }
 </script>
-<style>
-.global-options-decorator.pill {
-  @apply absolute inset-0 cursor-pointer whitespace-nowrap rounded-full bg-offwhite-100  ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:ring-white
-  dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 
-  formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700;
-}
-.global-options-wrapper.pill {
-  @apply relative inline-flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out;
-}
-input:checked ~ .global-options-decorator.pill {
-  @apply border-offwhite-100 bg-velvet-600 ring-velvet-600;
-}
-
-input:checked ~ .global-options-label.pill {
-  @apply dark:text-offwhite-100 text-offwhite-100;
-}
-
-input:disabled ~ .global-options-decorator.pill {
-  @apply pointer-events-none bg-denim-400  ring-denim-400;
-}
-
-input:active ~ .global-options-decorator.pill {
-  @apply scale-90 transition duration-200 ease-out;
-}
-
-input:focus-visible ~ .global-options-decorator.pill {
-  @apply outline outline-2 outline-offset-4 outline-velvet-600;
-}
-
-.global-options-wrapper.pill.disabled {
-  @apply pointer-events-none;
-}
-.global-options-label.pill {
-  @apply z-10 dark:formkit-invalid:text-offwhite-100 formkit-invalid:text-denim-900 px-4 py-3;
-}
-
-.global-options-input.pill {
-  @apply z-30 sr-only;
-}
-</style>

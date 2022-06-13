@@ -17,6 +17,7 @@ const Template = (args) => ({
 export const Checkbox = Template.bind({});
 export const Radio = Template.bind({});
 export const Toggle = Template.bind({});
+export const Pill = Template.bind({});
 Checkbox.args = {
   name: 'checkbox',
   label: 'checkbox',
@@ -46,3 +47,8 @@ Toggle.args = {
   label: 'toggle',
   type: 'toggle',
 };
+Pill.args = {
+  name: 'pill',
+  label: 'Long label',
+  type: 'pill',
+}
