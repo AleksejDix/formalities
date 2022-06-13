@@ -1,5 +1,5 @@
 <template>
-  <div class="global-banner" v-if="activated">
+  <div class="global-banner">
     <div class="mb-4 flex flex-1 items-center sm:mb-0">
       <div class="flex h-10 w-10 items-center justify-center">
         <GlobalIcon class="h-6 w-6" icon="mdi:bell-outline" />
@@ -17,31 +17,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, onUnmounted, watch } from 'vue';
+import { defineComponent } from 'vue';
 
-export default defineComponent({
-  setup() {
-    const activated = ref(false);
-
-    function activate() {
-      activated.value = true;
-    }
-
-    onMounted(() => {
-      window.addEventListener('mousemove', activate);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener('mousemove', activate);
-    });
-
-    watch(activated, () => {
-      window.removeEventListener('mousemove', activate);
-    });
-
-    return { activated, activate };
-  }
-});
+export default defineComponent({});
 </script>
 
 <style lang="postcss">
