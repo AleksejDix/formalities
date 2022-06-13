@@ -3,6 +3,8 @@
     <input
       type="checkbox"
       :class="[context.classes.input]"
+      :disabled="(context.disabled as boolean)"
+      :data-disabled="(context.disabled as boolean) ? true : undefined"
       :value="context._value"
       v-bind="context.attrs"
       @change="handleChange"
@@ -25,7 +27,7 @@ const props = defineProps({
 });
 const context = toRef(props, 'context');
 const node = context.value.node;
-
+context.value.disabled = context.value.disabled === '' || (context.value.disabled as boolean);
 function handleChange(event: Event) {
   const value = (event.target as HTMLInputElement).checked;
   node.input(value);

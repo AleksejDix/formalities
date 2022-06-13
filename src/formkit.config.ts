@@ -137,10 +137,7 @@ const formkitConfig: DefaultConfigOptions = {
       type: 'input',
       component: FormToggle
     },
-    pill: {
-      type: 'input',
-      component: FormInputPill
-    },
+    pill: createInput(FormInputPill),
     counter: {
       type: 'input',
       component: FormInputCounter

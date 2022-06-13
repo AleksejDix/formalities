@@ -11,7 +11,11 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: '<FormKit v-bind="args" />'
+  template: `<div class="space-y-4">
+    <FormKit v-bind="args" label="Default" />
+    <FormKit v-bind="args" validation="required" validation-visibility="live" />
+    <FormKit v-bind="args" label="Disabled" disabled />
+  </div>`
 });
 
 const TemplateToggle = (args) => ({

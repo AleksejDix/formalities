@@ -35,14 +35,14 @@ const checkbox = {
   wrapper: 'flex items-center space-x-4',
   label: 'dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
   input:
-    'form-checkbox rounded cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-offwhite-100 checked:border-velvet-800 checked:focus:bg-velvet-600 checked:focus:border-offwhite-100 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-800 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700'
+    'form-checkbox rounded cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-offwhite-100 checked:border-velvet-800 checked:focus:bg-velvet-600 checked:focus:border-offwhite-100 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-800 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:bg-denim-400 dark:formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed dark:formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-500 dark:formkit-disabled:border-denim-500 '
 };
 
 const radio = {
   wrapper: 'flex items-center space-x-4',
   label: 'dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
   input:
-    'form-radio rounded-full cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-velvet-600 checked:border-velvet-600 checked:focus:bg-velvet-600 checked:focus:border-velvet-600 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-600 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700  formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700'
+    'rounded-full cursor-pointer h-6 w-6 dark:bg-denim-800 bg-offwhite-100 border dark:border-offwhite-100 border-denim-900 focus:ring-offset-2 focus:ring-offset-offwhite-100 focus:dark:ring-offset-denim-900 focus:bg-offwhite-100 focus:dark:border-offwhite-100 focus:dark:bg-denim-800 focus:ring-velvet-800 focus:dark:ring-velvet-800 checked:dark:bg-velvet-600 checked:bg-velvet-600 checked:dark:border-velvet-600 checked:border-velvet-600 checked:focus:bg-velvet-600 checked:focus:border-velvet-600 checked:hover:dark:border-offwhite-100 checked:hover:bg-velvet-600 checked:hover:border-velvet-600 checked:focus:dark:bg-velvet-600 dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700  formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 formkit-disabled:bg-denim-400 dark:formkit-disabled:bg-denim-400 formkit-disabled:cursor-not-allowed dark:formkit-disabled:cursor-not-allowed formkit-disabled:border-denim-500 dark:formkit-disabled:border-denim-500'
 };
 
 const toggle = {
@@ -60,9 +60,9 @@ const toggle = {
 
 const pill = {
   wrapper:
-    'relative inline-flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out',
+    'relative inline-flex h-12 items-center justify-center transition duration-200',
   decorator:
-    'absolute inset-0 cursor-pointer whitespace-nowrap rounded-full bg-offwhite-100  ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:ring-white dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 peer-focus:outline peer-focus:outline-2 peer-focus:outline-offset-4 peer-focus:outline-velvet-600 peer-active:scale-90 peer-active:transition peer-active:duration-200 peer-active:ease-out peer-checked:border-offwhite-100 peer-checked:bg-velvet-600 peer-checked:ring-velvet-600',
+    'absolute inset-0 whitespace-nowrap rounded-full bg-offwhite-100 ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:ring-white dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 peer-focus:outline peer-focus:outline-2 peer-focus:outline-offset-4 peer-focus:outline-velvet-600 peer-active:scale-90 peer-active:transition peer-active:duration-200 peer-active:ease-out peer-checked:border-offwhite-100 peer-checked:bg-velvet-600 peer-checked:ring-velvet-600 peer-disabled:cursor-not-allowed peer-disabled:border-denim-400 peer-disabled:!bg-denim-400 peer-disabled:text-denim-500 peer-disabled:hover:!border-denim-400 peer-disabled:dark:border-denim-400',
   input: 'sr-only z-30 peer',
   label:
     'z-10 cursor-pointer dark:formkit-invalid:text-offwhite-100 formkit-invalid:text-denim-900 px-4 py-3 pb-3 peer-checked:dark:text-offwhite-100 peer-checked:text-offwhite-100 dark:text-offwhite-100 block w-full flex-1 text-16'
