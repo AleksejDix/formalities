@@ -5,6 +5,8 @@ import pctTheme from './assets/property-captain-theme.js';
 import FormButton from './components/FormButton.vue';
 import FormToggle from './components/FormToggle.vue';
 import FormInputPill from './components/FormInputPill.vue';
+import FormInputCounter from './components/FormInputCounter.vue';
+
 const messages = {
   en: {
     validation: {
@@ -132,6 +134,10 @@ const formkitConfig: DefaultConfigOptions = {
     pill: {
       type: 'input',
       component: FormInputPill
+    },
+    counter: {
+      type: 'input',
+      component: FormInputCounter
     }
   },
   messages: messages

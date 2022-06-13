@@ -88,7 +88,8 @@ const counter = {
   customLabel:
     'inline-block pb-1 pr-6 text-16 text-denim-900 dark:text-denim-400 font-medium formkit-invalid:text-ruby-700',
   customHelp: 'text-14 dark:text-denim-600 pt-1',
-  input: 'dark:text-offwhite-100 w-14'
+  input: 'dark:text-offwhite-100 w-14',
+  counterButton: [button.input, button.icon, button.secondary].join(' ')
 };
 
 const autocomplete = {
