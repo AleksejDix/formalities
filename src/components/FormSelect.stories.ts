@@ -24,7 +24,10 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<FormKit v-bind="args" />'
+  template: `
+  <div class="max-w-xs">
+    <FormKit v-bind="args" /> <br /> <FormKit v-bind="args" disabled />
+  </div>`
 });
 
 export const Select = Template.bind({});
