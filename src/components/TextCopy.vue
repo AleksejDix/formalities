@@ -11,7 +11,7 @@ export default defineComponent({
   },
   setup(properties, { slots }) {
     const headingClasses = computed(() => ({
-      'text-18 md:text-20 lg:text-24': properties.variant === 'lead',
+      'text-18 md:text-20 lg:text-24 dark:text-denim-400': properties.variant === 'lead',
       'text-denim-700 dark:text-denim-400': properties.variant === 'body',
       'text-14 dark:text-denim-600': properties.variant === 'small'
     }));
