@@ -1,16 +1,21 @@
 <template>
-  <label
-    :class="[context.classes[context._value ? 'checked' : 'unchecked'], context.classes.outer]"
-  >
-    <span :class="[{ 'translate-x-5': context._value }, context.classes.decorator]"> </span>
-    <input
-      type="checkbox"
-      :class="[context.classes.input]"
-      :checked="context._value"
-      v-bind="context.attrs"
-      @change="handleChange"
-    />
-  </label>
+  <div :class="context.classes.wrapper">
+    <div :class="context.classes.label">{{ context.label }}</div>
+    <label
+      :class="[context.classes[context._value ? 'checked' : 'unchecked'], context.classes.outer]"
+    >
+      <input
+        type="checkbox"
+        :class="[context.classes.input]"
+        :checked="context._value"
+        v-bind="context.attrs"
+        @change="handleChange"
+      />
+      <span :class="[{ 'translate-x-5': context._value }, context.classes.decorator]">
+        <slot />
+      </span>
+    </label>
+  </div>
 </template>
 
 <script lang="ts" setup>

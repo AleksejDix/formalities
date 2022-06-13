@@ -8,7 +8,7 @@
       @change="handleChange"
     />
     <span :class="context.classes.decorator"> </span>
-    <div :class="context.classes.label">{{ context.label  }}</div>
+    <div :class="context.classes.label">{{ context.label }}</div>
   </label>
 </template>
 

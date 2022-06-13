@@ -31,14 +31,6 @@ const button = {
   icon: 'py-3 px-3 text-16'
 };
 
-// const optionsInput = {
-//   wrapper: 'global-options-wrapper',
-//   label: 'global-options-label dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
-//   input: 'global-options-input',
-//   inner: 'global-options-inner',
-//   decorator: 'global-options-decorator'
-// };
-
 const checkbox = {
   wrapper: 'flex items-center space-x-4',
   label: 'dark:text-offwhite-100 block w-full flex-1 text-16 pt-1',
@@ -54,14 +46,14 @@ const radio = {
 };
 
 const toggle = {
-  outer: 'flex h-3.5 w-9 cursor-pointer items-center rounded-full py-1 duration-300 ease-in-out',
+  outer: 'flex h-6 w-12 cursor-pointer items-center rounded-full py-1 duration-300 ease-in-out',
   decorator:
-    'cursor-pointer h-5 w-5 shadow transform rounded-full bg-offwhite-100 duration-300 ease-in-out',
+    'cursor-pointer flex items-center justify-center mx-0.5 h-5 w-5 shadow transform rounded-full bg-offwhite-100 duration-300 ease-in-out peer-focus:outline peer-focus:outline-2 peer-focus:outline-offset-4 peer-focus:outline-velvet-600',
   wrapper: 'flex items-center space-x-4',
   label: 'dark:text-offwhite-100 block text-16 pt-1',
-  input: 'sr-only',
+  input: 'sr-only peer',
   inner:
-    'flex h-6 w-11 p-0.5 cursor-pointer items-center rounded-full py-1 duration-300 ease-in-out',
+    'flex h-6 w-12 p-0.5 cursor-pointer items-center rounded-full py-1 duration-300 ease-in-out',
   checked: 'bg-velvet-600',
   unchecked: 'bg-denim-400'
 };
@@ -70,7 +62,7 @@ const pill = {
   wrapper:
     'relative inline-flex h-12 cursor-pointer items-center justify-center transition duration-200 active:scale-90 active:ease-out',
   decorator:
-    'absolute inset-0 cursor-pointer whitespace-nowrap rounded-full bg-offwhite-100  ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:ring-white dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-velvet-600 peer-active:scale-90 peer-active:transition peer-active:duration-200 peer-active:ease-out peer-checked:border-offwhite-100 peer-checked:bg-velvet-600 peer-checked:ring-velvet-600',
+    'absolute inset-0 cursor-pointer whitespace-nowrap rounded-full bg-offwhite-100  ring-1 ring-denim-900 transition duration-200 dark:bg-denim-800 dark:ring-white dark:formkit-invalid:border-ruby-700 dark:formkit-invalid:ring-ruby-700 formkit-invalid:ring-ruby-700 formkit-invalid:border-ruby-700 peer-focus:outline peer-focus:outline-2 peer-focus:outline-offset-4 peer-focus:outline-velvet-600 peer-active:scale-90 peer-active:transition peer-active:duration-200 peer-active:ease-out peer-checked:border-offwhite-100 peer-checked:bg-velvet-600 peer-checked:ring-velvet-600',
   input: 'sr-only z-30 peer',
   label:
     'z-10 cursor-pointer dark:formkit-invalid:text-offwhite-100 formkit-invalid:text-denim-900 px-4 py-3 pb-3 peer-checked:dark:text-offwhite-100 peer-checked:text-offwhite-100 dark:text-offwhite-100 block w-full flex-1 text-16'
