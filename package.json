@@ -1,6 +1,6 @@
 {
   "name": "@ascarix/formalities",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "./dist/formalities.umd.js",
   "module": "./dist/formalities.es.js",
   "typings": "./dist/formalities.d.ts",
@@ -30,21 +30,21 @@
     "story:preview": "histoire preview"
   },
   "dependencies": {
+    "@formkit/tailwindcss": "^1.0.0-beta.6",
     "@formkit/vue": "^1.0.0-beta.8",
+    "@tailwindcss/forms": "^0.5.0",
     "vue": "^3.2.37",
     "vue-slider-component": "^4.0.0-beta.4",
-    "vue-tel-input": "^6.0.0-beta.7",
-    "@tailwindcss/forms": "^0.5.0",
-    "@formkit/tailwindcss": "^1.0.0-beta.6"
+    "vue-tel-input": "^6.0.0-beta.7"
   },
   "peerDependencies": {
+    "@formkit/tailwindcss": "^1.0.0-beta.6",
     "@formkit/vue": "^1.0.0-beta.8",
+    "@tailwindcss/forms": "^0.5.0",
     "tailwindcss": "^3.0.24",
     "vue": "^3.2.37",
     "vue-slider-component": "^4.0.0-beta.4",
-    "vue-tel-input": "^6.0.0-beta.7",
-    "@formkit/tailwindcss": "^1.0.0-beta.6",
-    "@tailwindcss/forms": "^0.5.0"
+    "vue-tel-input": "^6.0.0-beta.7"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",

@@ -6,6 +6,7 @@ import FormButton from './components/FormButton.vue';
 import FormToggle from './components/FormToggle.vue';
 import FormInputPill from './components/FormInputPill.vue';
 import FormInputCounter from './components/FormInputCounter.vue';
+import FormSlider from './components/FormSlider.vue';
 
 const messages = {
   en: {
@@ -141,6 +142,10 @@ const formkitConfig: DefaultConfigOptions = {
     counter: {
       type: 'input',
       component: FormInputCounter
+    },
+    slider: {
+      type: 'input',
+      component: FormSlider
     }
   },
   messages: messages

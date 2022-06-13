@@ -68,10 +68,9 @@ const pill = {
     'z-10 cursor-pointer dark:formkit-invalid:text-offwhite-100 formkit-invalid:text-denim-900 px-4 py-3 pb-3 peer-checked:dark:text-offwhite-100 peer-checked:text-offwhite-100 dark:text-offwhite-100 block w-full flex-1 text-16'
 };
 
-const range = {
+const slider = {
   label:
-    'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700 pb-2',
-  input: 'form-range range-slider'
+    'text-denim-900 dark:text-denim-400 dark:formkit-invalid:text-ruby-700 formkit-invalid:text-ruby-700'
 };
 
 const counter = {
@@ -117,7 +116,7 @@ export default {
   week: formInput,
   hidden: formInput,
   select: formInput,
-  range: range,
+  slider: slider,
   button,
   submit: button,
   counter: counter,
