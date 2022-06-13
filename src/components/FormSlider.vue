@@ -14,10 +14,12 @@
     />
   </div>
 </template>
+
 <script lang="ts" setup>
-import { toRef, computed, PropType } from 'vue';
+import { toRef, computed } from 'vue';
+import type { PropType } from 'vue';
 import VueSlider from 'vue-slider-component';
-import '../assets/slider/pctTheme.scss';
+// import '../assets/slider/pctTheme.scss';
 import type { FormKitFrameworkContext } from '@formkit/core';
 import type { MarksProp } from 'vue-slider-component/typings/typings';
 import { formatNumber } from '../lib/currency';
