@@ -33,6 +33,7 @@
     "@formkit/tailwindcss": "^1.0.0-beta.6",
     "@formkit/vue": "^1.0.0-beta.8",
     "@tailwindcss/forms": "^0.5.0",
+    "nanoid": "^4.0.0",
     "vue": "^3.2.37",
     "vue-slider-component": "^4.0.0-beta.4",
     "vue-tel-input": "^6.0.0-beta.7"
