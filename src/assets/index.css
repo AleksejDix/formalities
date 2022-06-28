@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-offwhite-100 text-denim-900 dark:bg-denim-900 dark:text-offwhite-100;
+  }
+}

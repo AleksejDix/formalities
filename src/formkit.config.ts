@@ -1,3 +1,13 @@
+import { createInput, type DefaultConfigOptions } from '@formkit/vue';
+import { de, fr, en, it } from '@formkit/i18n';
+import { generateClasses } from '@formkit/tailwindcss';
+import pctTheme from './assets/property-captain-theme.js';
+import FormButton from './components/FormButton.vue';
+import FormToggle from './components/FormToggle.vue';
+import FormInputPill from './components/FormInputPill.vue';
+import FormInputCounter from './components/FormInputCounter.vue';
+import FormSlider from './components/FormSlider.vue';
+
 const messages = {
   en: {
     validation: {
@@ -113,4 +123,31 @@ const messages = {
   }
 };
 
-export default messages;
+const formkitConfig: DefaultConfigOptions = {
+  locales: { de, fr, it, en },
+  locale: 'en',
+  config: {
+    classes: generateClasses(pctTheme)
+  },
+  inputs: {
+    button: {
+      type: 'input',
+      component: FormButton
+    },
+    toggle: {
+      type: 'input',
+      component: FormToggle
+    },
+    pill: createInput(FormInputPill),
+    counter: {
+      type: 'input',
+      component: FormInputCounter
+    },
+    slider: {
+      type: 'input',
+      component: FormSlider
+    }
+  },
+  messages: messages
+};
+export default formkitConfig;

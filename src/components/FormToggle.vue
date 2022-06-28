@@ -1,17 +1,21 @@
 <template>
-  <label :class="context.classes.wrapper">
-    <input
-      type="checkbox"
-      :class="[context.classes.input]"
-      :disabled="(context.disabled as boolean)"
-      :data-disabled="(context.disabled as boolean) ? true : undefined"
-      :value="context._value"
-      v-bind="context.attrs"
-      @change="handleChange"
-    />
-    <span :class="context.classes.decorator"> </span>
+  <div :class="context.classes.wrapper">
     <div :class="context.classes.label">{{ context.label }}</div>
-  </label>
+    <label
+      :class="[context.classes[context._value ? 'checked' : 'unchecked'], context.classes.outer]"
+    >
+      <input
+        type="checkbox"
+        :class="[context.classes.input]"
+        :checked="context._value"
+        v-bind="context.attrs"
+        @change="handleChange"
+      />
+      <span :class="[{ 'translate-x-5': context._value }, context.classes.decorator]">
+        <slot />
+      </span>
+    </label>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -27,7 +31,7 @@ const props = defineProps({
 });
 const context = toRef(props, 'context');
 const node = context.value.node;
-context.value.disabled = context.value.disabled === '' || (context.value.disabled as boolean);
+
 function handleChange(event: Event) {
   const value = (event.target as HTMLInputElement).checked;
   node.input(value);
